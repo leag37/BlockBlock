@@ -1,7 +1,8 @@
 include_directories(Include)
 
-set (BBShared_Sources 
-	Source/Test1.cpp
+set (BBShared_Sources
+	Source/BBNetAddress.cpp
+	Source/BBSocket.cpp
 )
 
 # Get the list of source files

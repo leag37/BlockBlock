@@ -116,29 +116,53 @@ BBShared/fast:
 	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/build
 .PHONY : BBShared/fast
 
-Source/Test1.o: Source/Test1.cpp.o
-.PHONY : Source/Test1.o
+Source/BBNetAddress.o: Source/BBNetAddress.cpp.o
+.PHONY : Source/BBNetAddress.o
 
 # target to build an object file
-Source/Test1.cpp.o:
-	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/Test1.cpp.o
-.PHONY : Source/Test1.cpp.o
+Source/BBNetAddress.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBNetAddress.cpp.o
+.PHONY : Source/BBNetAddress.cpp.o
 
-Source/Test1.i: Source/Test1.cpp.i
-.PHONY : Source/Test1.i
+Source/BBNetAddress.i: Source/BBNetAddress.cpp.i
+.PHONY : Source/BBNetAddress.i
 
 # target to preprocess a source file
-Source/Test1.cpp.i:
-	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/Test1.cpp.i
-.PHONY : Source/Test1.cpp.i
+Source/BBNetAddress.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBNetAddress.cpp.i
+.PHONY : Source/BBNetAddress.cpp.i
 
-Source/Test1.s: Source/Test1.cpp.s
-.PHONY : Source/Test1.s
+Source/BBNetAddress.s: Source/BBNetAddress.cpp.s
+.PHONY : Source/BBNetAddress.s
 
 # target to generate assembly for a file
-Source/Test1.cpp.s:
-	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/Test1.cpp.s
-.PHONY : Source/Test1.cpp.s
+Source/BBNetAddress.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBNetAddress.cpp.s
+.PHONY : Source/BBNetAddress.cpp.s
+
+Source/BBSocket.o: Source/BBSocket.cpp.o
+.PHONY : Source/BBSocket.o
+
+# target to build an object file
+Source/BBSocket.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBSocket.cpp.o
+.PHONY : Source/BBSocket.cpp.o
+
+Source/BBSocket.i: Source/BBSocket.cpp.i
+.PHONY : Source/BBSocket.i
+
+# target to preprocess a source file
+Source/BBSocket.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBSocket.cpp.i
+.PHONY : Source/BBSocket.cpp.i
+
+Source/BBSocket.s: Source/BBSocket.cpp.s
+.PHONY : Source/BBSocket.s
+
+# target to generate assembly for a file
+Source/BBSocket.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBSocket.cpp.s
+.PHONY : Source/BBSocket.cpp.s
 
 # Help Target
 help:
@@ -149,9 +173,12 @@ help:
 	@echo "... BBShared"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Source/Test1.o"
-	@echo "... Source/Test1.i"
-	@echo "... Source/Test1.s"
+	@echo "... Source/BBNetAddress.o"
+	@echo "... Source/BBNetAddress.i"
+	@echo "... Source/BBNetAddress.s"
+	@echo "... Source/BBSocket.o"
+	@echo "... Source/BBSocket.i"
+	@echo "... Source/BBSocket.s"
 .PHONY : help
 
 
