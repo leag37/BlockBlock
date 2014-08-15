@@ -30,3 +30,6 @@ bin
 
 # Mac-specific files
 *.DS_STORE
+
+# Documentation
+Docs
