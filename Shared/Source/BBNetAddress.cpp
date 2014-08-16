@@ -2,6 +2,10 @@
 // Author: Gael Huber
 #include "BBNetAddress.h"
 
+// TEMP
+#include <iostream>
+// END TEMP
+
 namespace BlockBlock
 {
 	/**
@@ -19,17 +23,17 @@ namespace BlockBlock
 	/**
 	* Constructor specifying A.B.C.D to compose network address
 	* @param
-	*	int A
+	*	uint A
 	* @param
-	*	int B
+	*	uint B
 	* @param
-	*	int C
+	*	uint C
 	* @param
-	*	int D
+	*	uint D
 	* @param
 	*	short The port in host format
 	*/
-	NetAddress::NetAddress(int a, int b, int c, int d, short port)
+	NetAddress::NetAddress(uint a, uint b, uint c, uint d, ushort port)
 		:	_hostAddress(a << 24 | b << 16 | c << 8 | d),
 			_netAddress(htonl(_hostAddress)),
 			_hostPort(port),
@@ -40,17 +44,17 @@ namespace BlockBlock
 	/**
 	* Constructor specifying network value equivalent to A.B.C.D
 	* @param
-	*	int The network address in network format
+	*	uint The network address in network format
 	* @param
-	*	short The network port in network format
+	*	ushort The network port in network format
 	*/
-	NetAddress::NetAddress(int address, short port)
+	NetAddress::NetAddress(uint address, ushort port)
 		:	_hostAddress(ntohl(address)),
 			_netAddress(address),
 			_hostPort(ntohs(port)),
 			_netPort(port)
 	{
-
+		
 	}
 
 	/**
@@ -94,9 +98,9 @@ namespace BlockBlock
 	/**
 	* Getter for the network address
 	* @return
-	*	int The address in network format
+	*	uint The address in network format
 	*/
-	int NetAddress::GetNetAddress() const
+	uint NetAddress::GetNetAddress() const
 	{
 		return _netAddress;
 	}
@@ -104,9 +108,9 @@ namespace BlockBlock
 	/**
 	* Getter for A
 	* @return
-	*	int Value representative of A
+	*	uint Value representative of A
 	*/
-	int NetAddress::GetA() const
+	uint NetAddress::GetA() const
 	{
 		return _hostAddress >> 24;
 	}
@@ -114,9 +118,9 @@ namespace BlockBlock
 	/**
 	* Getter for B
 	* @return
-	*	int Value representative of B
+	*	uint Value representative of B
 	*/
-	int NetAddress::GetB() const
+	uint NetAddress::GetB() const
 	{
 		return (_hostAddress >> 16) & 0x000000FF;
 	}
@@ -124,9 +128,9 @@ namespace BlockBlock
 	/**
 	* Getter for C
 	* @return
-	*	int Value representative of C
+	*	uint Value representative of C
 	*/
-	int NetAddress::GetC() const
+	uint NetAddress::GetC() const
 	{
 		return (_hostAddress >> 8) & 0x000000FF;
 	}
@@ -134,9 +138,9 @@ namespace BlockBlock
 	/**
 	* Getter for D
 	* @return
-	*	int Value representative of D
+	*	uint Value representative of D
 	*/
-	int NetAddress::GetD() const
+	uint NetAddress::GetD() const
 	{
 		return _hostAddress & 0x000000FF;
 	}
@@ -144,9 +148,9 @@ namespace BlockBlock
 	/**
 	* Get the port in host format
 	* @return
-	*	short The host port value
+	*	ushort The host port value
 	*/
-	short NetAddress::GetPort() const
+	ushort NetAddress::GetPort() const
 	{
 		return _hostPort;
 	}
@@ -154,9 +158,9 @@ namespace BlockBlock
 	/**
 	* Get the port in network format
 	* @return
-	*	short The network port value
+	*	ushort The network port value
 	*/
-	short NetAddress::GetNetPort() const
+	ushort NetAddress::GetNetPort() const
 	{
 		return _netPort;
 	}

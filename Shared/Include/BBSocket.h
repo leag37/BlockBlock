@@ -6,6 +6,7 @@
 #include "BBPlatform.h"
 #include "BBNetAddress.h"
 
+#include <iostream>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <fcntl.h>
@@ -52,11 +53,11 @@ namespace BlockBlock
 		/**
 		* Open a socket on a specified port
 		* @param
-		*	ushort The port number. If 0 is specified, any port is used
+		*	short The port number. If 0 is specified, any port is used
 		* @return
 		*	bool Returns true if the port is successfully open
 		*/
-		bool Open(ushort);
+		bool Open(short);
 
 		/**
 		* Close any open socket
@@ -94,7 +95,7 @@ namespace BlockBlock
 		*/
 		int Receive(NetAddress&, void*, int);
 
-	private:
+	//private:
 		/**
 		* A handle to the socket
 		*/

@@ -27,26 +27,26 @@ namespace BlockBlock
 		/**
 		* Constructor specifying A.B.C.D to compose network address
 		* @param
-		*	int A
+		*	uint A
 		* @param
-		*	int B
+		*	uint B
 		* @param
-		*	int C
+		*	uint C
 		* @param
-		*	int D
+		*	uint D
 		* @param
-		*	short The port in host format
+		*	ushort The port in host format
 		*/
-		NetAddress(int, int, int, int, short);
+		NetAddress(uint, uint, uint, uint, ushort);
 
 		/**
 		* Constructor specifying network value equivalent to A.B.C.D
 		* @param
-		*	int The network address in network format
+		*	uint The network address in network format
 		* @param
-		*	short The network port in network format
+		*	ushort The network port in network format
 		*/
-		NetAddress(int, short);
+		NetAddress(uint, ushort);
 
 		/**
 		* Copy constructor
@@ -72,72 +72,72 @@ namespace BlockBlock
 		/**
 		* Getter for the network address
 		* @return
-		*	int The address in network format
+		*	uint The address in network format
 		*/
-		int GetNetAddress() const;
+		uint GetNetAddress() const;
 
 		/**
 		* Getter for A
 		* @return
-		*	int Value representative of A
+		*	uint Value representative of A
 		*/
-		int GetA() const;
+		uint GetA() const;
 
 		/**
 		* Getter for B
 		* @return
-		*	int Value representative of B
+		*	uint Value representative of B
 		*/
-		int GetB() const;
+		uint GetB() const;
 
 		/**
 		* Getter for C
 		* @return
-		*	int Value representative of C
+		*	uint Value representative of C
 		*/
-		int GetC() const;
+		uint GetC() const;
 
 		/**
 		* Getter for D
 		* @return
-		*	int Value representative of D
+		*	uint Value representative of D
 		*/
-		int GetD() const;
+		uint GetD() const;
 
 		/**
 		* Get the port in host format
 		* @return
-		*	short The host port value
+		*	ushort The host port value
 		*/
-		short GetPort() const;
+		ushort GetPort() const;
 
 		/**
 		* Get the port in network format
 		* @return
-		*	short The network port value
+		*	ushort The network port value
 		*/
-		short GetNetPort() const;
+		ushort GetNetPort() const;
 
 	private:
 		/**
 		* Network address in host form
 		*/
-		int _hostAddress;
+		uint _hostAddress;
 
 		/**
 		* Network address in network form
 		*/
-		int _netAddress;
+		uint _netAddress;
 
 		/**
 		* Port in host form
 		*/
-		short _hostPort;
+		ushort _hostPort;
 
 		/**
 		* Port in network form
 		*/
-		short _netPort;
+		ushort _netPort;
 	};
 
 	/** @} */
