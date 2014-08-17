@@ -95,7 +95,7 @@ namespace BlockBlock
 		*/
 		int Receive(NetAddress&, void*, int);
 
-	//private:
+	private:
 		/**
 		* A handle to the socket
 		*/

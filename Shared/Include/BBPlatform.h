@@ -13,6 +13,9 @@ namespace BlockBlock
 	typedef unsigned long long uint64;
 	typedef long long int64;
 
+	// The game ID for this network
+	#define NETWORK_IDENTIFIER = 0x6AE0E597
+
 }	// Namespace
 
 #endif // __BBPLATFORM_H__
