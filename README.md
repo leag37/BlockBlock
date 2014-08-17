@@ -5,7 +5,15 @@ Networked 3D Air Hockey Game
 
 # Prerequisites
 1. CMake
-2. Clang (optional)
+2. Sublime Text 3
+  1. Recommended packages:
+    1. Package Manager: https://sublime.wbond.net/installation
+    2. C++ Starting Kit
+    3. Theme - Soda
+    4. Oasis Theme
+  2. Select View->Syntax->C++
+  3. Select Sublime Text->Preferences->Color Scheme->Oasis Theme->Oasis
+3. Clang (optional)
 
 # Setup
 
