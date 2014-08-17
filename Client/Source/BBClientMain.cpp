@@ -1,4 +1,5 @@
 #include "BBSocket.h"
+#include "BBTimer.h"
 
 #include <iostream>
 
@@ -18,7 +19,13 @@ int main()
 	// Send address
 	NetAddress toAddress = NetAddress(127, 0, 0, 1, 30000);
 
-	char c = ' ';
+	// Timer
+	Timer timer;
+	if(timer.Start() == false)
+	{
+		return -1;
+	}
+
 	do
 	{
 		// Receive all packets
@@ -30,27 +37,25 @@ int main()
 			std::cout << "Got reply: " << packet_data << std::endl;
 		}
 
-		// Get input
-		std::cin.ignore();
-		c = std::cin.get();
-
+		// Update the timer
+		timer.Update();
+		
 		// Send packets
-		if(c != 'x')
+		if(timer.GetElapsedTimeMs() > MICROSECONDS_PER_SECOND)
 		{
-			for(int i = 0; i < 5; ++i)
+			timer.Reset();
+
+			const char* blah = "hello";
+			if(socket.Send(toAddress, (void*)blah, sizeof("hello")) == false)
 			{
-				const char* blah = "hello";
-				if(socket.Send(toAddress, (void*)blah, sizeof("hello")) == false)
-				{
-					printf("failed to send packet\n");
-				}
-				else
-				{
-					printf("sent packet\n");
-				}
+				printf("failed to send packet\n");
+			}
+			else
+			{
+				printf("sent packet\n");
 			}
 		}
-	} while(c != 'x');
+	} while(timer.GetElapsedTimeMs() >= 0);
 
 	socket.Close();
 

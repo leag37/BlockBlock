@@ -3,6 +3,7 @@ include_directories(Include)
 set (BBShared_Sources
 	Source/BBNetAddress.cpp
 	Source/BBSocket.cpp
+	Source/BBTimer.cpp
 )
 
 # Get the list of source files

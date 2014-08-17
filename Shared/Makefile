@@ -164,6 +164,30 @@ Source/BBSocket.cpp.s:
 	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBSocket.cpp.s
 .PHONY : Source/BBSocket.cpp.s
 
+Source/BBTimer.o: Source/BBTimer.cpp.o
+.PHONY : Source/BBTimer.o
+
+# target to build an object file
+Source/BBTimer.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBTimer.cpp.o
+.PHONY : Source/BBTimer.cpp.o
+
+Source/BBTimer.i: Source/BBTimer.cpp.i
+.PHONY : Source/BBTimer.i
+
+# target to preprocess a source file
+Source/BBTimer.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBTimer.cpp.i
+.PHONY : Source/BBTimer.cpp.i
+
+Source/BBTimer.s: Source/BBTimer.cpp.s
+.PHONY : Source/BBTimer.s
+
+# target to generate assembly for a file
+Source/BBTimer.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBTimer.cpp.s
+.PHONY : Source/BBTimer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -179,6 +203,9 @@ help:
 	@echo "... Source/BBSocket.o"
 	@echo "... Source/BBSocket.i"
 	@echo "... Source/BBSocket.s"
+	@echo "... Source/BBTimer.o"
+	@echo "... Source/BBTimer.i"
+	@echo "... Source/BBTimer.s"
 .PHONY : help
 
 

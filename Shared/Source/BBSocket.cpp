@@ -77,8 +77,6 @@ namespace BlockBlock
 			return false;
 		}
 
-		printf("address: %i\n", socketAddress.GetNetAddress());
-
 		if(bind(_socket, (struct sockaddr*) &address, sizeof(address)) < 0)
 		{
 			printf("failed to bind socket\n");
