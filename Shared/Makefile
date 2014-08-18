@@ -116,6 +116,30 @@ BBShared/fast:
 	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/build
 .PHONY : BBShared/fast
 
+Source/BBConnection.o: Source/BBConnection.cpp.o
+.PHONY : Source/BBConnection.o
+
+# target to build an object file
+Source/BBConnection.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBConnection.cpp.o
+.PHONY : Source/BBConnection.cpp.o
+
+Source/BBConnection.i: Source/BBConnection.cpp.i
+.PHONY : Source/BBConnection.i
+
+# target to preprocess a source file
+Source/BBConnection.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBConnection.cpp.i
+.PHONY : Source/BBConnection.cpp.i
+
+Source/BBConnection.s: Source/BBConnection.cpp.s
+.PHONY : Source/BBConnection.s
+
+# target to generate assembly for a file
+Source/BBConnection.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBConnection.cpp.s
+.PHONY : Source/BBConnection.cpp.s
+
 Source/BBNetAddress.o: Source/BBNetAddress.cpp.o
 .PHONY : Source/BBNetAddress.o
 
@@ -221,6 +245,9 @@ help:
 	@echo "... BBShared"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Source/BBConnection.o"
+	@echo "... Source/BBConnection.i"
+	@echo "... Source/BBConnection.s"
 	@echo "... Source/BBNetAddress.o"
 	@echo "... Source/BBNetAddress.i"
 	@echo "... Source/BBNetAddress.s"

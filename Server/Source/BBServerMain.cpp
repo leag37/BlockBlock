@@ -1,3 +1,4 @@
+#include "BBConnection.h"
 #include "BBPacket.h"
 #include "BBSocket.h"
 
@@ -16,10 +17,42 @@ int main()
 	socket.Open(30000);
 
 	Packet packet;
+
+	// Create a connection
+	Connection connection;
+	uint connectionAddress = 0;
+
 	while(socket.IsOpen())
 	{
 		NetAddress address;
-		int bytes = socket.Receive(address, (void*)&packet, sizeof(Packet));
+		int bytes = 0;
+		
+		if(connectionAddress == 0)
+		{
+			bytes = socket.Receive(address, (void*)&packet, sizeof(Packet));
+
+			// Create a connection
+			if(bytes > 0)
+			{
+				printf("Establishing connection\n");
+				connection = Connection(socket, address);
+				connectionAddress = address.GetNetAddress();
+			}
+		}
+		else
+		{
+			bytes = connection.Poll(packet) ? 1 : 0;
+
+			if(bytes == 1)
+			{
+				printf("GOT STUFF\n");
+			}
+
+			if(connection.IsConnected() == false)
+			{
+				printf("Connection lost\n");
+			}
+		}
 
 		if(bytes > 0)
 		{
@@ -27,7 +60,7 @@ int main()
 			const char* blah = "got it";
 
 			packet = Packet(0, 1, sizeof("got it"), (void*)blah);
-			socket.Send(address, (void*)&packet, sizeof(Packet));
+			connection.Send(packet);
 		}
 	}
 
