@@ -12,7 +12,7 @@ namespace BlockBlock
 	*/
 
 	/**
-	* The size of the data portion of the packet
+	* The size of the data portion of the packet in bytes
 	*/
 	#define DATA_PACKET_SIZE 104
 
@@ -37,23 +37,18 @@ namespace BlockBlock
 
 		/**
 		* Constructor specifying packet ID, data size, and data
-		* @param
-		*	uint The packet ID for this packet
-		* @param
-		*	uint The message type for this packet
-		* @param
-		*	uchar The size of the data in this packet
-		* @param
-		*	void* A pointer to the data being transfered to this packet
+		* @param packetId The packet ID for this packet
+		* @param messageType The message type for this packet
+		* @param dataSize The size of the data in this packet
+		* @param data A pointer to the data being transfered to this packet
 		*/
-		Packet(uint, uint, uchar, void*);
+		Packet(uint packetId, uint messageType, uchar dataSize, void* data);
 
 		/**
 		* Copy constructor
-		* @param
-		*	const Packet& The packet to copy
+		* @param other The packet to copy
 		*/
-		Packet(const Packet&);
+		Packet(const Packet& other);
 
 		/**
 		* Destructor
@@ -62,12 +57,10 @@ namespace BlockBlock
 
 		/**
 		* Assignment operator
-		* @param
-		*	const Packet& The packet to assign
-		* @return
-		*	Packet& The resultant packet
+		* @param other The packet to assign
+		* @return The resultant packet
 		*/
-		Packet& operator=(const Packet&);
+		Packet& operator=(const Packet& other);
 
 	private:
 		/**

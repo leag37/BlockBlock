@@ -31,10 +31,9 @@ namespace BlockBlock
 
 		/**
 		* Copy constructor
-		* @param
-		*	const Socket& The socket to copy
+		* @param other The socket to copy
 		*/
-		Socket(const Socket&);
+		Socket(const Socket& other);
 
 		/**
 		* Destructor
@@ -43,21 +42,17 @@ namespace BlockBlock
 
 		/**
 		* Assignment operator
-		* @param
-		*	const Socket& The socket to copy
-		* @return
-		*	Socket& The resultant socket
+		* @param other The socket to copy
+		* @return The resultant socket
 		*/
-		Socket& operator=(const Socket&);
+		Socket& operator=(const Socket& other);
 
 		/**
 		* Open a socket on a specified port
-		* @param
-		*	short The port number. If 0 is specified, any port is used
-		* @return
-		*	bool Returns true if the port is successfully open
+		* @param port The port number. If 0 is specified, any port is used
+		* @return Returns true if the port is successfully open
 		*/
-		bool Open(short);
+		bool Open(short port);
 
 		/**
 		* Close any open socket
@@ -66,34 +61,27 @@ namespace BlockBlock
 
 		/**
 		* Returns whether the socket is currently open
-		* @return
-		*	Returns true if there is an open socket, false otherwise
+		* @return Returns true if there is an open socket, false otherwise
 		*/
 		bool IsOpen() const;
 
 		/**
 		* Send a packet to a target NetAddress
-		* @param
-		*	const NetAddress& The network address to send the data
-		* @param
-		*	void* A pointer to the data to send
-		* @param
-		* 	int The length of the data to send
+		* @param toAddress The network address to send the data
+		* @param data A pointer to the data to send
+		* @param size The length of the data to send
+		* @return Returns true if successfully sent
 		*/
-		bool Send(const NetAddress&, void*, int);
+		bool Send(const NetAddress& toAddress, void* data, int size;
 
 		/**
 		* Receive data over the socket
-		* @param
-		*	NetAddress& The sender of the packet
-		* @param
-		*	void* A pointer to the data to receive
-		* @param
-		*	int The maximum size of the data to receive
-		* @return
-		*	int The number of bytes read
+		* @param fromAddress The sender of the packet
+		* @param data A pointer to the data to receive
+		* @param size The maximum size of the data to receive
+		* @return int The number of bytes read
 		*/
-		int Receive(NetAddress&, void*, int);
+		int Receive(NetAddress& fromAddress, void* data, int size);
 
 	private:
 		/**

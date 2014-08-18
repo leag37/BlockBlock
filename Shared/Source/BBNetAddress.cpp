@@ -22,16 +22,11 @@ namespace BlockBlock
 
 	/**
 	* Constructor specifying A.B.C.D to compose network address
-	* @param
-	*	uint A
-	* @param
-	*	uint B
-	* @param
-	*	uint C
-	* @param
-	*	uint D
-	* @param
-	*	short The port in host format
+	* @param a A
+	* @param b B
+	* @param c C
+	* @param d D
+	* @param port The port in host format
 	*/
 	NetAddress::NetAddress(uint a, uint b, uint c, uint d, ushort port)
 		:	_hostAddress(a << 24 | b << 16 | c << 8 | d),
@@ -43,10 +38,8 @@ namespace BlockBlock
 
 	/**
 	* Constructor specifying network value equivalent to A.B.C.D
-	* @param
-	*	uint The network address in network format
-	* @param
-	*	ushort The network port in network format
+	* @param address The network address in network format
+	* @param port The network port in network format
 	*/
 	NetAddress::NetAddress(uint address, ushort port)
 		:	_hostAddress(ntohl(address)),
@@ -59,8 +52,7 @@ namespace BlockBlock
 
 	/**
 	* Copy constructor
-	* @param
-	*	const NetAddress& The address to copy
+	* @param other The address to copy
 	*/
 	NetAddress::NetAddress(const NetAddress& other)
 		:	_hostAddress(other._hostAddress),
@@ -81,10 +73,8 @@ namespace BlockBlock
 
 	/**
 	* Assignment operator
-	* @param
-	*	const NetworkAddress& The address to assign
-	* @return
-	*	NetworkAddress& The resultant address
+	* @param other The address to assign
+	* @return The resultant address
 	*/
 	NetAddress& NetAddress::operator=(const NetAddress& other)
 	{
@@ -97,8 +87,7 @@ namespace BlockBlock
 
 	/**
 	* Getter for the network address
-	* @return
-	*	uint The address in network format
+	* @return The address in network format
 	*/
 	uint NetAddress::GetNetAddress() const
 	{
@@ -107,8 +96,7 @@ namespace BlockBlock
 
 	/**
 	* Getter for A
-	* @return
-	*	uint Value representative of A
+	* @return Value representative of A
 	*/
 	uint NetAddress::GetA() const
 	{
@@ -117,8 +105,7 @@ namespace BlockBlock
 
 	/**
 	* Getter for B
-	* @return
-	*	uint Value representative of B
+	* @return Value representative of B
 	*/
 	uint NetAddress::GetB() const
 	{
@@ -127,8 +114,7 @@ namespace BlockBlock
 
 	/**
 	* Getter for C
-	* @return
-	*	uint Value representative of C
+	* @return Value representative of C
 	*/
 	uint NetAddress::GetC() const
 	{
@@ -137,8 +123,7 @@ namespace BlockBlock
 
 	/**
 	* Getter for D
-	* @return
-	*	uint Value representative of D
+	* @return Value representative of D
 	*/
 	uint NetAddress::GetD() const
 	{
@@ -147,8 +132,7 @@ namespace BlockBlock
 
 	/**
 	* Get the port in host format
-	* @return
-	*	ushort The host port value
+	* @return The host port value
 	*/
 	ushort NetAddress::GetPort() const
 	{
@@ -157,8 +141,7 @@ namespace BlockBlock
 
 	/**
 	* Get the port in network format
-	* @return
-	*	ushort The network port value
+	* @return The network port value
 	*/
 	ushort NetAddress::GetNetPort() const
 	{

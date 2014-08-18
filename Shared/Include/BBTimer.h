@@ -30,10 +30,9 @@ namespace BlockBlock
 
 		/**
 		* Copy constructor
-		* @param
-		*	const Timer& The timer to copy
+		* @param other The timer to copy
 		*/
-		Timer(const Timer&);
+		Timer(const Timer& other);
 
 		/**
 		* Destructor
@@ -42,17 +41,14 @@ namespace BlockBlock
 
 		/**
 		* Assignment operator
-		* @param
-		*	const Timer& The timer to copy
-		* @return
-		*	Timer& The resultant timer
+		* @param other The timer to copy
+		* @return The resultant timer
 		*/
-		Timer& operator=(const Timer&);
+		Timer& operator=(const Timer& other);
 
 		/**
 		* Start the clock
-		* @return
-		*	bool Returns true if the clock was started successfully
+		* @return Returns true if the clock was started successfully
 		*/
 		bool Start();
 
@@ -78,15 +74,13 @@ namespace BlockBlock
 
 		/**
 		* Get the delta for this timer in milliseconds
-		* @return
-		*	long The delta for the timer
+		* @return The delta for the timer
 		*/
 		long GetDeltaTimeMs() const;
 
 		/**
 		* Get the current elapsed time since starting the clock
-		* @return
-		*	long The elapsed time in milliseconds
+		* @return The elapsed time in milliseconds
 		*/
 		long GetElapsedTimeMs() const;
 

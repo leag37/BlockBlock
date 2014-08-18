@@ -26,34 +26,26 @@ namespace BlockBlock
 
 		/**
 		* Constructor specifying A.B.C.D to compose network address
-		* @param
-		*	uint A
-		* @param
-		*	uint B
-		* @param
-		*	uint C
-		* @param
-		*	uint D
-		* @param
-		*	ushort The port in host format
+		* @param a A
+		* @param b B
+		* @param c C
+		* @param d D
+		* @param port The port in host format
 		*/
-		NetAddress(uint, uint, uint, uint, ushort);
+		NetAddress(uint a, uint b, uint c, uint d, ushort port);
 
 		/**
 		* Constructor specifying network value equivalent to A.B.C.D
-		* @param
-		*	uint The network address in network format
-		* @param
-		*	ushort The network port in network format
+		* @param address The network address in network format
+		* @param port The network port in network format
 		*/
-		NetAddress(uint, ushort);
+		NetAddress(uint address, ushort port);
 
 		/**
 		* Copy constructor
-		* @param
-		*	const NetAddress& The address to copy
+		* @param other The address to copy
 		*/
-		NetAddress(const NetAddress&);
+		NetAddress(const NetAddress& other);
 
 		/**
 		* Destructor
@@ -62,59 +54,50 @@ namespace BlockBlock
 
 		/**
 		* Assignment operator
-		* @param
-		*	const NetworkAddress& The address to assign
-		* @return
-		*	NetworkAddress& The resultant address
+		* @param other The address to assign
+		* @return The resultant address
 		*/
-		NetAddress& operator=(const NetAddress&);
+		NetAddress& operator=(const NetAddress& other);
 
 		/**
 		* Getter for the network address
-		* @return
-		*	uint The address in network format
+		* @return The address in network format
 		*/
 		uint GetNetAddress() const;
 
 		/**
 		* Getter for A
-		* @return
-		*	uint Value representative of A
+		* @return Value representative of A
 		*/
 		uint GetA() const;
 
 		/**
 		* Getter for B
-		* @return
-		*	uint Value representative of B
+		* @return Value representative of B
 		*/
 		uint GetB() const;
 
 		/**
 		* Getter for C
-		* @return
-		*	uint Value representative of C
+		* @return Value representative of C
 		*/
 		uint GetC() const;
 
 		/**
 		* Getter for D
-		* @return
-		*	uint Value representative of D
+		* @return Value representative of D
 		*/
 		uint GetD() const;
 
 		/**
 		* Get the port in host format
-		* @return
-		*	ushort The host port value
+		* @return The host port value
 		*/
 		ushort GetPort() const;
 
 		/**
 		* Get the port in network format
-		* @return
-		*	ushort The network port value
+		* @return The network port value
 		*/
 		ushort GetNetPort() const;
 
