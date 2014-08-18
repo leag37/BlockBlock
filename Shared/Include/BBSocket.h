@@ -72,7 +72,7 @@ namespace BlockBlock
 		* @param size The length of the data to send
 		* @return Returns true if successfully sent
 		*/
-		bool Send(const NetAddress& toAddress, void* data, int size;
+		bool Send(const NetAddress& toAddress, void* data, int size);
 
 		/**
 		* Receive data over the socket

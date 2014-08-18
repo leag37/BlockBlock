@@ -2,6 +2,7 @@ include_directories(Include)
 
 set (BBShared_Sources
 	Source/BBNetAddress.cpp
+	Source/BBPacket.cpp
 	Source/BBSocket.cpp
 	Source/BBTimer.cpp
 )

@@ -10,7 +10,7 @@
 
 namespace BlockBlock
 {
-	/** \addtogroup
+	/** \addtogroup Utils
 	*	@{
 	*/
 

@@ -1,3 +1,4 @@
+#include "BBPacket.h"
 #include "BBSocket.h"
 
 #include <iostream>
@@ -14,21 +15,19 @@ int main()
 	Socket socket = Socket();
 	socket.Open(30000);
 
+	Packet packet;
 	while(socket.IsOpen())
 	{
-		unsigned char packet_data[256];
-
-		unsigned int max_packet_size = sizeof(packet_data);
-
 		NetAddress address;
-		int bytes = socket.Receive(address, (void*)packet_data, max_packet_size);
+		int bytes = socket.Receive(address, (void*)&packet, sizeof(Packet));
 
 		if(bytes > 0)
 		{
-			std::cout << "Received the packet: " << packet_data << std::endl;
+			std::cout << "Received the packet: " << (char*)packet.GetData() << std::endl;
 			const char* blah = "got it";
 
-			socket.Send(address, (void*)blah, sizeof("got it"));
+			packet = Packet(0, 1, sizeof("got it"), (void*)blah);
+			socket.Send(address, (void*)&packet, sizeof(Packet));
 		}
 	}
 

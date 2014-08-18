@@ -5,6 +5,10 @@
 
 namespace BlockBlock
 {
+	/** \addtogroup Core
+	*	@{
+	*/
+
 	// Typedefs
 	typedef unsigned char uchar;
 	typedef unsigned short ushort;
@@ -14,7 +18,9 @@ namespace BlockBlock
 	typedef long long int64;
 
 	// The game ID for this network
-	#define NETWORK_IDENTIFIER = 0x6AE0E597
+	#define GAME_IDENTIFIER 0x6AE0E597
+
+	/** @} */
 
 }	// Namespace
 

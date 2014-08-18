@@ -1,3 +1,5 @@
+
+#include "BBPacket.h"
 #include "BBSocket.h"
 #include "BBTimer.h"
 
@@ -29,12 +31,11 @@ int main()
 	do
 	{
 		// Receive all packets
-		unsigned char packet_data[256];
-		unsigned int max_packet_size = sizeof(packet_data);
+		Packet packet;
 		NetAddress fromAddress;
-		while(socket.Receive(fromAddress, (void*)packet_data, max_packet_size) > 0)
+		while(socket.Receive(fromAddress, (void*)&packet, sizeof(Packet)) > 0)
 		{
-			std::cout << "Got reply: " << packet_data << std::endl;
+			std::cout << "Got reply: " << (const char*)packet.GetData() << std::endl;
 		}
 
 		// Update the timer
@@ -46,7 +47,8 @@ int main()
 			timer.Reset();
 
 			const char* blah = "hello";
-			if(socket.Send(toAddress, (void*)blah, sizeof("hello")) == false)
+			packet = Packet(0, 1, sizeof("hello"), (void*)blah);
+			if(socket.Send(toAddress, (void*)&packet, sizeof(Packet)) == false)
 			{
 				printf("failed to send packet\n");
 			}

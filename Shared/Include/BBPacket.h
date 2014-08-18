@@ -62,6 +62,36 @@ namespace BlockBlock
 		*/
 		Packet& operator=(const Packet& other);
 
+		/**
+		* Get the game id
+		* @return The game id for this packet
+		*/
+		uint GetGameId() const;
+
+		/**
+		* Get the packet id
+		* @return The unique packet id for this packet
+		*/
+		uint GetPacketId() const;
+
+		/**
+		* Get the message type for this packet
+		* @return The message type for this packet
+		*/
+		uint GetMessageType() const;
+
+		/**
+		* Get packet data size
+		* @return The size of the data in the packet
+		*/
+		uchar GetDataSize() const;
+
+		/**
+		* Get the data in the packet
+		* @return A pointer to the data in the packet
+		*/
+		void* GetData() const;
+
 	private:
 		/**
 		* The game ID
