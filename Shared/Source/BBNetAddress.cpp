@@ -86,6 +86,16 @@ namespace BlockBlock
 	}
 
 	/**
+	* Equivalence operator
+	* @param other The NetAddress to compare against
+	* @return True if both the socket and port are equal
+	*/
+	bool NetAddress::operator==(const NetAddress& other) const
+	{
+		return _netAddress == other._netAddress && _netPort == other._netPort;
+	}
+
+	/**
 	* Getter for the network address
 	* @return The address in network format
 	*/

@@ -8,6 +8,8 @@
 #include "BBSocket.h"
 #include "BBTimer.h"
 
+#include <queue>
+
 namespace BlockBlock
 {
 	/** \addtogroup Network
@@ -49,6 +51,29 @@ namespace BlockBlock
 		~Connection();
 
 		/**
+		* Enqueue an entry to the connection. This will
+		* be processed later when the connection.
+		* @param packet The packet to enqueue
+		*/
+		void Enqueue(const Packet& packet);
+
+		/**
+		* Dequeue a packet for processing
+		* @param packet The packet to populate with data
+		* @return True if the dequeue retrieved a packet
+		*/
+		bool Dequeue(Packet& packet);
+
+		/**
+		* Build and send a packet of data through this connection
+		* @param messageType The message type for this data packet
+		* @param size The size of the data being transfered
+		* @param data The pointer to the data
+		* @return Returns true if successfully transferred
+		*/
+		bool Send(uint messageType, uchar size, void* data);
+
+		/**
 		* Poll the connection for any data
 		* @param packet The packet to receive
 		*/
@@ -58,13 +83,19 @@ namespace BlockBlock
 		* Send a packet to the connected address
 		* @param packet The packet to send
 		*/
-		void Send(const Packet& packet);
+		void SendPacket(const Packet& packet);
 
 		/**
 		* Is the connection active
 		* @return Returns true if the connection is active
 		*/
 		bool IsConnected() const;
+
+		/**
+		* Get the NetAddress associated with this connection
+		* @return The NetAddress for the connection
+		*/
+		const NetAddress& GetNetAddress() const;
 
 	private:
 		/**
@@ -81,6 +112,16 @@ namespace BlockBlock
 		* Timer to ensure the connection is still valid
 		*/
 		Timer _timer;
+
+		/**
+		* The current packet id of the last send message
+		*/
+		uint _lastSentPacketId;
+
+		/**
+		* Packet queue
+		*/
+		std::queue<Packet> _packetQueue;
 	};
 
 	/** @} */

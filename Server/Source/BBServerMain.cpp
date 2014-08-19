@@ -1,4 +1,4 @@
-#include "BBConnection.h"
+#include "BBConnectionManager.h"
 #include "BBPacket.h"
 #include "BBSocket.h"
 
@@ -13,58 +13,36 @@ using namespace BlockBlock;
 
 int main()
 {
-	Socket socket = Socket();
-	socket.Open(30000);
+	ConnectionManager* connectionManager = new ConnectionManager();
+	connectionManager->Initialize(30000);
+	//Socket socket = Socket();
+	//socket.Open(30000);
 
 	Packet packet;
 
 	// Create a connection
-	Connection connection;
-	uint connectionAddress = 0;
+	//Connection connection;
+	//uint connectionAddress = 0;
 
-	while(socket.IsOpen())
+	while(true)
 	{
-		NetAddress address;
-		int bytes = 0;
-		
-		if(connectionAddress == 0)
+		connectionManager->Update();
+
+		Connection* connection = connectionManager->GetUnboundConnection();
+		if(connection)
 		{
-			bytes = socket.Receive(address, (void*)&packet, sizeof(Packet));
-
-			// Create a connection
-			if(bytes > 0)
+			Packet packet;
+			while(connection->Dequeue(packet))
 			{
-				printf("Establishing connection\n");
-				connection = Connection(socket, address);
-				connectionAddress = address.GetNetAddress();
+				printf("Received packet: %s\n", (char*)packet.GetData());
+				packet = Packet(0, 1, sizeof("got it"), (void*)("got it"));
+				connection->Send(1, sizeof("got it"), (void*)("got it"));
+				//connection->SendPacket(packet);
 			}
-		}
-		else
-		{
-			bytes = connection.Poll(packet) ? 1 : 0;
-
-			if(bytes == 1)
-			{
-				printf("GOT STUFF\n");
-			}
-
-			if(connection.IsConnected() == false)
-			{
-				printf("Connection lost\n");
-			}
-		}
-
-		if(bytes > 0)
-		{
-			std::cout << "Received the packet: " << (char*)packet.GetData() << std::endl;
-			const char* blah = "got it";
-
-			packet = Packet(0, 1, sizeof("got it"), (void*)blah);
-			connection.Send(packet);
 		}
 	}
 
-	socket.Close();
+	//socket.Close();
 
 	return 0;
 }

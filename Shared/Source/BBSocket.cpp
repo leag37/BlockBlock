@@ -47,7 +47,7 @@ namespace BlockBlock
 	* @param port The port number. If 0 is specified, any port is used
 	* @return Returns true if the port is successfully open
 	*/
-	bool Socket::Open(short port)
+	bool Socket::Open(ushort port)
 	{
 		// If the socket is already open it, return false
 		if(_socket > -1)

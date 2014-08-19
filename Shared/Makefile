@@ -140,6 +140,30 @@ Source/BBConnection.cpp.s:
 	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBConnection.cpp.s
 .PHONY : Source/BBConnection.cpp.s
 
+Source/BBConnectionManager.o: Source/BBConnectionManager.cpp.o
+.PHONY : Source/BBConnectionManager.o
+
+# target to build an object file
+Source/BBConnectionManager.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBConnectionManager.cpp.o
+.PHONY : Source/BBConnectionManager.cpp.o
+
+Source/BBConnectionManager.i: Source/BBConnectionManager.cpp.i
+.PHONY : Source/BBConnectionManager.i
+
+# target to preprocess a source file
+Source/BBConnectionManager.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBConnectionManager.cpp.i
+.PHONY : Source/BBConnectionManager.cpp.i
+
+Source/BBConnectionManager.s: Source/BBConnectionManager.cpp.s
+.PHONY : Source/BBConnectionManager.s
+
+# target to generate assembly for a file
+Source/BBConnectionManager.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBConnectionManager.cpp.s
+.PHONY : Source/BBConnectionManager.cpp.s
+
 Source/BBNetAddress.o: Source/BBNetAddress.cpp.o
 .PHONY : Source/BBNetAddress.o
 
@@ -248,6 +272,9 @@ help:
 	@echo "... Source/BBConnection.o"
 	@echo "... Source/BBConnection.i"
 	@echo "... Source/BBConnection.s"
+	@echo "... Source/BBConnectionManager.o"
+	@echo "... Source/BBConnectionManager.i"
+	@echo "... Source/BBConnectionManager.s"
 	@echo "... Source/BBNetAddress.o"
 	@echo "... Source/BBNetAddress.i"
 	@echo "... Source/BBNetAddress.s"

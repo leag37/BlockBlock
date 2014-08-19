@@ -6,6 +6,7 @@
 #include "BBPlatform.h"
 
 #include <netinet/in.h>
+#include <functional>
 
 namespace BlockBlock
 {
@@ -58,6 +59,13 @@ namespace BlockBlock
 		* @return The resultant address
 		*/
 		NetAddress& operator=(const NetAddress& other);
+
+		/**
+		* Equivalence operator
+		* @param other The NetAddress to compare against
+		* @return True if both the socket and port are equal
+		*/
+		bool operator==(const NetAddress& other) const;
 
 		/**
 		* Getter for the network address
@@ -126,5 +134,18 @@ namespace BlockBlock
 	/** @} */
 
 }	// Namespace
+
+namespace std
+{
+	/**
+	* Hash function specialization for netaddress
+	*/
+	template<>
+	struct hash<BlockBlock::NetAddress> {
+	    size_t operator()(const BlockBlock::NetAddress& address) const {
+	        return std::hash<BlockBlock::uint>()(address.GetNetAddress()) ^ std::hash<BlockBlock::ushort>()(address.GetNetPort());
+	    }
+	};
+}
 
 #endif // __BBNETADDRESS_H__
