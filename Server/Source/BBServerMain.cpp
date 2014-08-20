@@ -31,11 +31,9 @@ int main()
 		Connection* connection = connectionManager->GetUnboundConnection();
 		if(connection)
 		{
-			Packet packet;
 			while(connection->Dequeue(packet))
 			{
 				printf("Received packet: %s\n", (char*)packet.GetData());
-				packet = Packet(0, 1, sizeof("got it"), (void*)("got it"));
 				connection->Send(1, sizeof("got it"), (void*)("got it"));
 				//connection->SendPacket(packet);
 			}

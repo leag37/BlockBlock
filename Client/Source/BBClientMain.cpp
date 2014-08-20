@@ -1,4 +1,5 @@
 
+#include "BBConnectionManager.h"
 #include "BBPacket.h"
 #include "BBSocket.h"
 #include "BBTimer.h"
@@ -14,12 +15,15 @@ using namespace BlockBlock;
 
 int main()
 {
+	ConnectionManager* connectionManager = new ConnectionManager();
+	connectionManager->Initialize(0);
+
 	// Open a socket
-	Socket socket = Socket();
-	socket.Open(0);
+	//Socket socket = Socket();
+	//socket.Open(0);
 
 	// Send address
-	NetAddress toAddress = NetAddress(127, 0, 0, 1, 30000);
+	//NetAddress toAddress = NetAddress(127, 0, 0, 1, 30000);
 
 	// Timer
 	Timer timer;
@@ -28,38 +32,44 @@ int main()
 		return -1;
 	}
 
+	Packet packet;
+	NetAddress address = NetAddress(127, 0, 0, 1, 30000);
+	connectionManager->CreateConnection(address);
+
 	do
 	{
 		// Receive all packets
-		Packet packet;
-		NetAddress fromAddress;
-		while(socket.Receive(fromAddress, (void*)&packet, sizeof(Packet)) > 0)
+		connectionManager->Update();
+		Connection* connection = connectionManager->GetUnboundConnection();
+
+		if(connection)
 		{
-			std::cout << "Got reply: " << (const char*)packet.GetData() << std::endl;
+			while(connection->Dequeue(packet))
+			{
+				std::cout << "Got reply: " << (const char*)packet.GetData() << std::endl;
+			}	
+
+			// Send packets
+			if(timer.GetElapsedTimeMs() > MICROSECONDS_PER_SECOND)
+			{
+				timer.Reset();
+
+				if(connection->Send(1, sizeof("hello"), (void*)("hello")) == false)
+				{
+					printf("failed to send packet\n");
+				}
+				else
+				{
+					printf("sent packet\n");
+				}
+			}
 		}
 
 		// Update the timer
 		timer.Update();
-		
-		// Send packets
-		if(timer.GetElapsedTimeMs() > MICROSECONDS_PER_SECOND)
-		{
-			timer.Reset();
-
-			const char* blah = "hello";
-			packet = Packet(0, 1, sizeof("hello"), (void*)blah);
-			if(socket.Send(toAddress, (void*)&packet, sizeof(Packet)) == false)
-			{
-				printf("failed to send packet\n");
-			}
-			else
-			{
-				printf("sent packet\n");
-			}
-		}
 	} while(timer.GetElapsedTimeMs() >= 0);
 
-	socket.Close();
+	//socket.Close();
 
 	return 0;
 }

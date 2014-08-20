@@ -8,6 +8,7 @@
 #include "BBSocket.h"
 #include "BBTimer.h"
 
+#include <vector>
 #include <queue>
 
 namespace BlockBlock
@@ -99,6 +100,13 @@ namespace BlockBlock
 
 	private:
 		/**
+		* Check for packets unreceived by the connected address. If there are any
+		* unreceived packets, resend them.
+		*/
+
+
+	private:
+		/**
 		* The socket on which to send messages
 		*/
 		Socket _socket;
@@ -116,7 +124,32 @@ namespace BlockBlock
 		/**
 		* The current packet id of the last send message
 		*/
-		uint _lastSentPacketId;
+		uint _localPacketId;
+
+		/**
+		* The highest packet id that has been received by the remote host
+		*/
+		uint _localAck;
+
+		/**
+		* The local host packet ack bitfield
+		*/
+		uint _localAckBitfield;
+
+		/**
+		* The highest received packet id from the remote host
+		*/
+		uint _remoteAck;
+
+		/**
+		* The remote host packet ack bitfield
+		*/
+		uint _remoteAckBitfield;
+
+		/**
+		* 32 most recent packets
+		*/
+		std::vector<Packet> _sentPackets;
 
 		/**
 		* Packet queue

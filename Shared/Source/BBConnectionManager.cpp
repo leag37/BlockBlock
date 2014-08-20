@@ -64,8 +64,16 @@ namespace BlockBlock
 		// While there are valid messages on the socket, interpret them
 		NetAddress address;
 		Packet packet;
-		while(_socket.Receive(address, (void*)&packet, sizeof(Packet)) > 0)
+		// We must receive at least sizeof(uint) bytes to read the game identifier from the packet
+		
+		while(_socket.Receive(address, (void*)&packet, sizeof(Packet)) > (int)sizeof(uint))
 		{
+			// First, check whether the packet's gameId is the same as the expected game id
+			if(packet.GetGameId() != GAME_IDENTIFIER)
+			{
+				continue;
+			}
+
 			// Try to find an existing connection
 			std::unordered_map<NetAddress, Connection*>::iterator connectionItr = _openConnections.find(address);
 			Connection* connection = 0;
@@ -95,6 +103,15 @@ namespace BlockBlock
 			// Now that we have a connection, pass the packet data along to the connection
 			connection->Enqueue(packet);
 		}
+	}
+
+	/**
+	* Create a connection
+	* @param address The address on which to create a connection
+	*/
+	void ConnectionManager::CreateConnection(const NetAddress& address)
+	{
+		_unboundConnections[address] = new Connection(_socket, address);
 	}
 
 	/**

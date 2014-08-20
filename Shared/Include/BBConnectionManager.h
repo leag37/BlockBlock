@@ -62,6 +62,12 @@ namespace BlockBlock
 		void Update();
 
 		/**
+		* Create a connection
+		* @param address The address on which to create a connection
+		*/
+		void CreateConnection(const NetAddress& address);
+
+		/**
 		* Get an unbound connection
 		* @return A pointer to an unbound connection. If none are available, return 0
 		*/
