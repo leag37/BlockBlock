@@ -64,8 +64,9 @@ namespace BlockBlock
 		/**
 		* Create a connection
 		* @param address The address on which to create a connection
+		* @return The created connection
 		*/
-		void CreateConnection(const NetAddress& address);
+		Connection* CreateConnection(const NetAddress& address);
 
 		/**
 		* Get an unbound connection

@@ -108,10 +108,13 @@ namespace BlockBlock
 	/**
 	* Create a connection
 	* @param address The address on which to create a connection
+	* @return The created connection
 	*/
-	void ConnectionManager::CreateConnection(const NetAddress& address)
+	Connection* ConnectionManager::CreateConnection(const NetAddress& address)
 	{
-		_unboundConnections[address] = new Connection(_socket, address);
+		 connection = new Connection(_socket, address);
+		 _unboundConnections[address] = connection;
+		 return connection;
 	}
 
 	/**
