@@ -10,11 +10,12 @@ namespace BlockBlock
      * Default constructor
      */
     Connection::Connection()
-        :	_localPacketId(0),
-        _localAck(0),
-        _localAckBitfield(0),
-        _remoteAck(0),
-        _remoteAckBitfield(0)
+        :
+            _localPacketId(0),
+            _localAck(0),
+            _localAckBitfield(0),
+            _remoteAck(0),
+            _remoteAckBitfield(0)
     {
         _timer.Start();
     }
@@ -25,13 +26,14 @@ namespace BlockBlock
      * @param address The address to send data
      */
     Connection::Connection(const Socket& socket, const NetAddress& address)
-        :	_socket(socket),
-        _address(address),
-        _localPacketId(0),
-        _localAck(0),
-        _localAckBitfield(0),
-        _remoteAck(0),
-        _remoteAckBitfield(0)
+        :
+            _socket(socket),
+            _address(address),
+            _localPacketId(0),
+            _localAck(0),
+            _localAckBitfield(0),
+            _remoteAck(0),
+            _remoteAckBitfield(0)
     {
         _timer.Start();	
 
@@ -42,15 +44,16 @@ namespace BlockBlock
      * @param other The connection object to copy
      */
     Connection::Connection(const Connection& other)
-        :	_socket(other._socket),
-        _address(other._address),
-        _timer(other._timer),
-        _localPacketId(other._localPacketId),
-        _localAck(other._localAck),
-        _localAckBitfield(other._localAckBitfield),
-        _remoteAck(other._remoteAck),
-        _remoteAckBitfield(other._remoteAckBitfield),
-        _sentPackets(other._sentPackets)
+        :
+            _socket(other._socket),
+            _address(other._address),
+            _timer(other._timer),
+            _localPacketId(other._localPacketId),
+            _localAck(other._localAck),
+            _localAckBitfield(other._localAckBitfield),
+            _remoteAck(other._remoteAck),
+            _remoteAckBitfield(other._remoteAckBitfield),
+            _sentPackets(other._sentPackets)
     {
 
     }

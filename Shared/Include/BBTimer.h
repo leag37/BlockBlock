@@ -10,103 +10,103 @@
 
 namespace BlockBlock
 {
-	/** \addtogroup Utils
-	*	@{
-	*/
+    /** \addtogroup Utils
+     *	@{
+     */
 
-	#define MICROSECONDS_PER_SECOND 1000000
+#define MICROSECONDS_PER_SECOND 1000000
 
-	/**
-	* A timer keeps track of the passage of time, both cumulative time since last reset and the delta
-	* since the last poll interval
-	*/
-	class Timer
-	{
-	public:
-		/**
-		* Default constructor
-		*/
-		Timer();
+    /**
+     * A timer keeps track of the passage of time, both cumulative time since last reset and the delta
+     * since the last poll interval
+     */
+    class Timer
+    {
+        public:
+            /**
+             * Default constructor
+             */
+            Timer();
 
-		/**
-		* Copy constructor
-		* @param other The timer to copy
-		*/
-		Timer(const Timer& other);
+            /**
+             * Copy constructor
+             * @param other The timer to copy
+             */
+            Timer(const Timer& other);
 
-		/**
-		* Destructor
-		*/
-		~Timer();
+            /**
+             * Destructor
+             */
+            ~Timer();
 
-		/**
-		* Assignment operator
-		* @param other The timer to copy
-		* @return The resultant timer
-		*/
-		Timer& operator=(const Timer& other);
+            /**
+             * Assignment operator
+             * @param other The timer to copy
+             * @return The resultant timer
+             */
+            Timer& operator=(const Timer& other);
 
-		/**
-		* Start the clock
-		* @return Returns true if the clock was started successfully
-		*/
-		bool Start();
+            /**
+             * Start the clock
+             * @return Returns true if the clock was started successfully
+             */
+            bool Start();
 
-		/**
-		* Stop the clock
-		*/
-		void Stop();
+            /**
+             * Stop the clock
+             */
+            void Stop();
 
-		/**
-		* Reset the clock
-		*/
-		void Reset();
+            /**
+             * Reset the clock
+             */
+            void Reset();
 
-		/**
-		* Zero the clock
-		*/
-		void Zero();
+            /**
+             * Zero the clock
+             */
+            void Zero();
 
-		/**
-		* Update the timer for this polling interval
-		*/
-		void Update();
+            /**
+             * Update the timer for this polling interval
+             */
+            void Update();
 
-		/**
-		* Get the delta for this timer in milliseconds
-		* @return The delta for the timer
-		*/
-		long GetDeltaTimeMs() const;
+            /**
+             * Get the delta for this timer in milliseconds
+             * @return The delta for the timer
+             */
+            long GetDeltaTimeMs() const;
 
-		/**
-		* Get the current elapsed time since starting the clock
-		* @return The elapsed time in milliseconds
-		*/
-		long GetElapsedTimeMs() const;
+            /**
+             * Get the current elapsed time since starting the clock
+             * @return The elapsed time in milliseconds
+             */
+            long GetElapsedTimeMs() const;
 
-	private:
-		/**
-		* The time when the timer was started
-		*/
-		timeval _start;
+        private:
+            /**
+             * The time when the timer was started
+             */
+            timeval _start;
 
-		/**
-		* The time time when the timer was stopped
-		*/
-		timeval _stop;
+            /**
+             * The time time when the timer was stopped
+             */
+            timeval _stop;
 
-		/**
-		* The time at the previous update call
-		*/
-		timeval _previous;
+            /**
+             * The time at the previous update call
+             */
+            timeval _previous;
 
-		/**
-		* The time from the most recent update call
-		*/
-		timeval _current;
-	};
+            /**
+             * The time from the most recent update call
+             */
+            timeval _current;
+    };
 
-	/** @} */
+    /** @} */
 
 }	// Namespace
 

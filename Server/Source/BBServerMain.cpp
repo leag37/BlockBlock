@@ -13,34 +13,34 @@ using namespace BlockBlock;
 
 int main()
 {
-	ConnectionManager* connectionManager = new ConnectionManager();
-	connectionManager->Initialize(30000);
-	//Socket socket = Socket();
-	//socket.Open(30000);
+    ConnectionManager* connectionManager = new ConnectionManager();
+    connectionManager->Initialize(30000);
+    //Socket socket = Socket();
+    //socket.Open(30000);
 
-	Packet packet;
+    Packet packet;
 
-	// Create a connection
-	//Connection connection;
-	//uint connectionAddress = 0;
+    // Create a connection
+    //Connection connection;
+    //uint connectionAddress = 0;
 
-	while(true)
-	{
-		connectionManager->Update();
+    while(true)
+    {
+        connectionManager->Update();
 
-		Connection* connection = connectionManager->GetUnboundConnection();
-		if(connection)
-		{
-			while(connection->Dequeue(packet))
-			{
-				printf("Received packet: %s\n", (char*)packet.GetData());
-				connection->Send(1, sizeof("got it"), (void*)("got it"));
-				//connection->SendPacket(packet);
-			}
-		}
-	}
+        Connection* connection = connectionManager->GetUnboundConnection();
+        if(connection)
+        {
+            while(connection->Dequeue(packet))
+            {
+                printf("Received packet: %s\n", (char*)packet.GetData());
+                connection->Send(1, sizeof("got it"), (void*)("got it"));
+                //connection->SendPacket(packet);
+            }
+        }
+    }
 
-	//socket.Close();
+    //socket.Close();
 
-	return 0;
+    return 0;
 }

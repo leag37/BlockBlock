@@ -7,51 +7,51 @@
 
 namespace BlockBlock
 {
-	/** \addtogroup Core
-	*	@{
-	*/
+    /** \addtogroup Core
+     *	@{
+     */
 
-	/**
-	* Defines a singleton implementation for a class
-	*/
-	template <typename Type>
-	class Singleton
-	{
-	public:
-		/**
-		* Default constructor
-		*/
-		Singleton();
+    /**
+     * Defines a singleton implementation for a class
+     */
+    template <typename Type>
+        class Singleton
+        {
+            public:
+                /**
+                 * Default constructor
+                 */
+                Singleton();
 
-		/**
-		* Destructor
-		*/
-		virtual ~Singleton();
+                /**
+                 * Destructor
+                 */
+                virtual ~Singleton();
 
-	private:
-		/**
-		* Copy constructor
-		* @param other The singleton instance to copy
-		*/
-		Singleton(const Singleton& other);
+            private:
+                /**
+                 * Copy constructor
+                 * @param other The singleton instance to copy
+                 */
+                Singleton(const Singleton& other);
 
-		/**
-		* Assignment operator
-		* @param other The singleton instance to assign
-		* @return The resultant singleton
-		*/
-		Singleton& operator=(const Singleton& other);
+                /**
+                 * Assignment operator
+                 * @param other The singleton instance to assign
+                 * @return The resultant singleton
+                 */
+                Singleton& operator=(const Singleton& other);
 
-	protected:
-		/**
-		* Singleton instance
-		*/
-		static Type* _instance;
-	};
+            protected:
+                /**
+                 * Singleton instance
+                 */
+                static Type* _instance;
+        };
 
-	#include "BBSingleton.inl"
+#include "BBSingleton.inl"
 
-	/** @} */
+    /** @} */
 
 }	// Namespace
 
