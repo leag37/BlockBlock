@@ -33,3 +33,7 @@ bin
 
 # Documentation
 Docs
+
+# Sublime Files
+.tags
+.tags_sorted_by_file

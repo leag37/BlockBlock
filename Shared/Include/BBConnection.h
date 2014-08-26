@@ -75,6 +75,12 @@ namespace BlockBlock
             bool Send(uint messageType, uchar size, void* data);
 
             /**
+             * Receives all messages on the active socket and enqueues the packets to the
+             * inbox queue for processing.
+             */
+            void Receive();
+
+            /**
              * Poll the connection for any data
              * @param packet The packet to receive
              */
@@ -102,8 +108,10 @@ namespace BlockBlock
             /**
              * Check for packets unreceived by the connected address. If there are any
              * unreceived packets, resend them.
+             * @param packet The packet to duplicate and resend
+             * @return Returns true when the package is resent successfully
              */
-
+            bool Resend(const Packet& packet);
 
         private:
             /**

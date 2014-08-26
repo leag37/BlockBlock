@@ -112,7 +112,7 @@ namespace BlockBlock
      */
     Connection* ConnectionManager::CreateConnection(const NetAddress& address)
     {
-        connection = new Connection(_socket, address);
+        Connection* connection = new Connection(_socket, address);
         _unboundConnections[address] = connection;
         return connection;
     }

@@ -116,6 +116,30 @@ BBClient/fast:
 	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/build
 .PHONY : BBClient/fast
 
+Source/BBClient.o: Source/BBClient.cpp.o
+.PHONY : Source/BBClient.o
+
+# target to build an object file
+Source/BBClient.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/Source/BBClient.cpp.o
+.PHONY : Source/BBClient.cpp.o
+
+Source/BBClient.i: Source/BBClient.cpp.i
+.PHONY : Source/BBClient.i
+
+# target to preprocess a source file
+Source/BBClient.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/Source/BBClient.cpp.i
+.PHONY : Source/BBClient.cpp.i
+
+Source/BBClient.s: Source/BBClient.cpp.s
+.PHONY : Source/BBClient.s
+
+# target to generate assembly for a file
+Source/BBClient.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/Source/BBClient.cpp.s
+.PHONY : Source/BBClient.cpp.s
+
 Source/BBClientMain.o: Source/BBClientMain.cpp.o
 .PHONY : Source/BBClientMain.o
 
@@ -149,6 +173,9 @@ help:
 	@echo "... BBClient"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Source/BBClient.o"
+	@echo "... Source/BBClient.i"
+	@echo "... Source/BBClient.s"
 	@echo "... Source/BBClientMain.o"
 	@echo "... Source/BBClientMain.i"
 	@echo "... Source/BBClientMain.s"

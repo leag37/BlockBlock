@@ -116,6 +116,30 @@ BBShared/fast:
 	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/build
 .PHONY : BBShared/fast
 
+Source/BBAbstractNetworkObject.o: Source/BBAbstractNetworkObject.cpp.o
+.PHONY : Source/BBAbstractNetworkObject.o
+
+# target to build an object file
+Source/BBAbstractNetworkObject.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBAbstractNetworkObject.cpp.o
+.PHONY : Source/BBAbstractNetworkObject.cpp.o
+
+Source/BBAbstractNetworkObject.i: Source/BBAbstractNetworkObject.cpp.i
+.PHONY : Source/BBAbstractNetworkObject.i
+
+# target to preprocess a source file
+Source/BBAbstractNetworkObject.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBAbstractNetworkObject.cpp.i
+.PHONY : Source/BBAbstractNetworkObject.cpp.i
+
+Source/BBAbstractNetworkObject.s: Source/BBAbstractNetworkObject.cpp.s
+.PHONY : Source/BBAbstractNetworkObject.s
+
+# target to generate assembly for a file
+Source/BBAbstractNetworkObject.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBAbstractNetworkObject.cpp.s
+.PHONY : Source/BBAbstractNetworkObject.cpp.s
+
 Source/BBConnection.o: Source/BBConnection.cpp.o
 .PHONY : Source/BBConnection.o
 
@@ -187,6 +211,30 @@ Source/BBNetAddress.s: Source/BBNetAddress.cpp.s
 Source/BBNetAddress.cpp.s:
 	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBNetAddress.cpp.s
 .PHONY : Source/BBNetAddress.cpp.s
+
+Source/BBNetworkPlayer.o: Source/BBNetworkPlayer.cpp.o
+.PHONY : Source/BBNetworkPlayer.o
+
+# target to build an object file
+Source/BBNetworkPlayer.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBNetworkPlayer.cpp.o
+.PHONY : Source/BBNetworkPlayer.cpp.o
+
+Source/BBNetworkPlayer.i: Source/BBNetworkPlayer.cpp.i
+.PHONY : Source/BBNetworkPlayer.i
+
+# target to preprocess a source file
+Source/BBNetworkPlayer.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBNetworkPlayer.cpp.i
+.PHONY : Source/BBNetworkPlayer.cpp.i
+
+Source/BBNetworkPlayer.s: Source/BBNetworkPlayer.cpp.s
+.PHONY : Source/BBNetworkPlayer.s
+
+# target to generate assembly for a file
+Source/BBNetworkPlayer.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/Source/BBNetworkPlayer.cpp.s
+.PHONY : Source/BBNetworkPlayer.cpp.s
 
 Source/BBPacket.o: Source/BBPacket.cpp.o
 .PHONY : Source/BBPacket.o
@@ -269,6 +317,9 @@ help:
 	@echo "... BBShared"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Source/BBAbstractNetworkObject.o"
+	@echo "... Source/BBAbstractNetworkObject.i"
+	@echo "... Source/BBAbstractNetworkObject.s"
 	@echo "... Source/BBConnection.o"
 	@echo "... Source/BBConnection.i"
 	@echo "... Source/BBConnection.s"
@@ -278,6 +329,9 @@ help:
 	@echo "... Source/BBNetAddress.o"
 	@echo "... Source/BBNetAddress.i"
 	@echo "... Source/BBNetAddress.s"
+	@echo "... Source/BBNetworkPlayer.o"
+	@echo "... Source/BBNetworkPlayer.i"
+	@echo "... Source/BBNetworkPlayer.s"
 	@echo "... Source/BBPacket.o"
 	@echo "... Source/BBPacket.i"
 	@echo "... Source/BBPacket.s"

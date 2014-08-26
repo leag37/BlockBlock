@@ -2,7 +2,20 @@
 	"folders":
 	[
 		{
-			"path": "/Users/Gandalf/Dev/BlockBlock"
+			"path": "/Users/Gandalf/Dev/BlockBlock",
+			"file_exclude_patterns": [
+				".tags",
+				".tags_sorted_by_file",
+				"CMakeCache.txt",
+				"cmake_install.cmake",
+				"Makefile"
+			],
+			"folder_exclude_patterns": [
+				"bin",
+				"CMakeFiles",
+				"Docs",
+				"lib"
+			]
 		}
 	]
 }

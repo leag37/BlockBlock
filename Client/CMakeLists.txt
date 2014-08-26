@@ -2,6 +2,7 @@ include_directories(Include ${BlockBlock_SOURCE_DIR}/Shared/Include)
 
 # Define sources
 set (BBClient_Sources
+	Source/BBClient.cpp
 	Source/BBClientMain.cpp
 )
 

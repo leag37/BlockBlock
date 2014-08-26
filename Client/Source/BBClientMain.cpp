@@ -1,4 +1,4 @@
-
+#include "BBClient.h"
 #include "BBConnectionManager.h"
 #include "BBPacket.h"
 #include "BBSocket.h"
@@ -15,15 +15,24 @@ using namespace BlockBlock;
 
 int main()
 {
-    ConnectionManager* connectionManager = new ConnectionManager();
+	// Create and initialize a client
+	Client* client = new Client();
+	if(client->Initialize())
+	{
+		// Run the client
+		client->Run();
+	}
+
+	// Shut down the client
+	client->Shutdown();
+
+	// Delete the client
+	delete client;
+
+	return 0;
+
+    /*ConnectionManager* connectionManager = new ConnectionManager();
     connectionManager->Initialize(0);
-
-    // Open a socket
-    //Socket socket = Socket();
-    //socket.Open(0);
-
-    // Send address
-    //NetAddress toAddress = NetAddress(127, 0, 0, 1, 30000);
 
     // Timer
     Timer timer;
@@ -69,7 +78,5 @@ int main()
         timer.Update();
     } while(timer.GetElapsedTimeMs() >= 0);
 
-    //socket.Close();
-
-    return 0;
+    return 0;*/
 }
