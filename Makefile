@@ -141,6 +141,19 @@ BBShared/fast:
 	$(MAKE) -f Shared/CMakeFiles/BBShared.dir/build.make Shared/CMakeFiles/BBShared.dir/build
 .PHONY : BBShared/fast
 
+#=============================================================================
+# Target rules for targets named BBTests
+
+# Build rule for target.
+BBTests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BBTests
+.PHONY : BBTests
+
+# fast build rule for target.
+BBTests/fast:
+	$(MAKE) -f Tests/CMakeFiles/BBTests.dir/build.make Tests/CMakeFiles/BBTests.dir/build
+.PHONY : BBTests/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -152,6 +165,7 @@ help:
 	@echo "... BBClient"
 	@echo "... BBServer"
 	@echo "... BBShared"
+	@echo "... BBTests"
 .PHONY : help
 
 
