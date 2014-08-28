@@ -6,8 +6,10 @@ include_directories(
 )
 
 set (BBTests_Sources
+	Source/BBTest.cpp
 	Source/BBTestMain.cpp
 	Source/BBTestSuite.cpp
+	Source/BBTestVector.cpp
 )
 
 add_executable(BBTests ${BBTests_Sources})

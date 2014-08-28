@@ -4,6 +4,10 @@
 #define __BBTESTSUITE_H__
 
 #include "BBPlatform.h"
+#include "BBTest.h"
+
+#include <vector>
+//#include "BBVector.h"
 
 namespace BlockBlock
 {
@@ -44,6 +48,11 @@ namespace BlockBlock
 		void Run();
 
 	private:
+		/**
+		 * Vector of tests to run
+		 */
+		 std::vector<Test*> _tests;
+		//Vector<ITest*> _tests;
 	};
 
 	/** @} */

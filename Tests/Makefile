@@ -116,6 +116,30 @@ BBTests/fast:
 	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Tests/CMakeFiles/BBTests.dir/build.make Tests/CMakeFiles/BBTests.dir/build
 .PHONY : BBTests/fast
 
+Source/BBTest.o: Source/BBTest.cpp.o
+.PHONY : Source/BBTest.o
+
+# target to build an object file
+Source/BBTest.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Tests/CMakeFiles/BBTests.dir/build.make Tests/CMakeFiles/BBTests.dir/Source/BBTest.cpp.o
+.PHONY : Source/BBTest.cpp.o
+
+Source/BBTest.i: Source/BBTest.cpp.i
+.PHONY : Source/BBTest.i
+
+# target to preprocess a source file
+Source/BBTest.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Tests/CMakeFiles/BBTests.dir/build.make Tests/CMakeFiles/BBTests.dir/Source/BBTest.cpp.i
+.PHONY : Source/BBTest.cpp.i
+
+Source/BBTest.s: Source/BBTest.cpp.s
+.PHONY : Source/BBTest.s
+
+# target to generate assembly for a file
+Source/BBTest.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Tests/CMakeFiles/BBTests.dir/build.make Tests/CMakeFiles/BBTests.dir/Source/BBTest.cpp.s
+.PHONY : Source/BBTest.cpp.s
+
 Source/BBTestMain.o: Source/BBTestMain.cpp.o
 .PHONY : Source/BBTestMain.o
 
@@ -164,6 +188,30 @@ Source/BBTestSuite.cpp.s:
 	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Tests/CMakeFiles/BBTests.dir/build.make Tests/CMakeFiles/BBTests.dir/Source/BBTestSuite.cpp.s
 .PHONY : Source/BBTestSuite.cpp.s
 
+Source/BBTestVector.o: Source/BBTestVector.cpp.o
+.PHONY : Source/BBTestVector.o
+
+# target to build an object file
+Source/BBTestVector.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Tests/CMakeFiles/BBTests.dir/build.make Tests/CMakeFiles/BBTests.dir/Source/BBTestVector.cpp.o
+.PHONY : Source/BBTestVector.cpp.o
+
+Source/BBTestVector.i: Source/BBTestVector.cpp.i
+.PHONY : Source/BBTestVector.i
+
+# target to preprocess a source file
+Source/BBTestVector.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Tests/CMakeFiles/BBTests.dir/build.make Tests/CMakeFiles/BBTests.dir/Source/BBTestVector.cpp.i
+.PHONY : Source/BBTestVector.cpp.i
+
+Source/BBTestVector.s: Source/BBTestVector.cpp.s
+.PHONY : Source/BBTestVector.s
+
+# target to generate assembly for a file
+Source/BBTestVector.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Tests/CMakeFiles/BBTests.dir/build.make Tests/CMakeFiles/BBTests.dir/Source/BBTestVector.cpp.s
+.PHONY : Source/BBTestVector.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -173,12 +221,18 @@ help:
 	@echo "... BBTests"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Source/BBTest.o"
+	@echo "... Source/BBTest.i"
+	@echo "... Source/BBTest.s"
 	@echo "... Source/BBTestMain.o"
 	@echo "... Source/BBTestMain.i"
 	@echo "... Source/BBTestMain.s"
 	@echo "... Source/BBTestSuite.o"
 	@echo "... Source/BBTestSuite.i"
 	@echo "... Source/BBTestSuite.s"
+	@echo "... Source/BBTestVector.o"
+	@echo "... Source/BBTestVector.i"
+	@echo "... Source/BBTestVector.s"
 .PHONY : help
 
 

@@ -17,7 +17,7 @@ set(CMAKE_CXX_FLAGS "-Wall -save-temps")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
-
+set(TEMPDIR ${CMAKE_BINARY_DIR}/asm/${CMAKE_BUILD_TYPE})
 
 # Add subdirectories for project configs
 add_subdirectory(Client)
