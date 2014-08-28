@@ -14,10 +14,20 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/${CMAKE_BUILD_TYPE})
 # Set compiler flags
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 set(CMAKE_CXX_FLAGS "-Wall -save-temps")
-set(CMAKE_CXX_FLAGS_DEBUG "-g")
-set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
-set(TEMPDIR ${CMAKE_BINARY_DIR}/asm/${CMAKE_BUILD_TYPE})
+if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+	message("Configuring for DEBUG!")
+	add_definitions(-DDEBUG)
+	set(CMAKE_CXX_FLAGS_DEBUG "-g")
+elseif(${CMAKE_BUILD_TYPE} STREQUAL "Release")
+	message("Configuring for RELEASE!")
+	add_definitions(-DRELEASE)
+	set(CMAKE_CXX_FLAGS_RELEASE "-O2")
+else()
+	message("neither debug nor release mode...")
+	message(${CMAKE_BUILD_TYPE})
+endif()
+
 
 # Add subdirectories for project configs
 add_subdirectory(Client)
