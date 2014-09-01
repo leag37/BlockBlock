@@ -110,7 +110,27 @@ namespace BlockBlock
 		/**
 		 * Macro for proper logging on AssertNotEquals
 		 */
-		#define AssertNotEquals(expected, actual) _AssertNotEquals(expected, __FILE__, __PRETTY_FUNCTION__, __LINE__)
+		#define AssertNotEquals(expected, actual) _AssertNotEquals(expected, actual, __FILE__, __PRETTY_FUNCTION__, __LINE__)
+
+		/**
+		 * Macro for proper logging on AssertGreaterThan
+		 */
+		#define AssertGreaterThan(target, actual) _AssertGreaterThan(target, actual, __FILE__, __PRETTY_FUNCTION__, __LINE__)
+
+		/**
+		 * Macro for proper logging on AssertGreaterThanOrEqual
+		 */
+		#define AssertGreaterThanOrEqual(target, actual) _AssertGreaterThanOrEqual(target, actual, __FILE__, __PRETTY_FUNCTION__, __LINE__)
+
+		/**
+		 * Macro for proper logging on AssertLessThan
+		 */
+		#define AssertLessThan(target, actual) _AssertLessThan(target, actual, __FILE__, __PRETTY_FUNCTION__, __LINE__)
+
+		/**
+		 * Macro for proper logging on AssertLessThanOrEqual
+		 */
+		#define AssertLessThanOrEqual(target, actual) _AssertLessThanOrEqual(target, actual, __FILE__, __PRETTY_FUNCTION__, __LINE__)
 
 		/**
 		 * Asserts whether two values are equal
@@ -137,7 +157,7 @@ namespace BlockBlock
 	 		}
 		}
 
-		 /**
+		/**
 		 * Asserts whether two values are not equal
 		 * @param expected The expected value
 		 * @param actual The actual value
@@ -156,6 +176,98 @@ namespace BlockBlock
 				// Fail
  				++_failedAssertions;
  				LogFailure(expected, actual, "AssertNotEquals", fileName, funcName, lineNumber);
+			}
+		}
+
+		/**
+		 * Asserts whether a value actual is greater than the target value
+		 * @param target The target value
+		 * @param actual The actual value
+		 * @param fileName The filename containing the calling function
+		 * @param funcName The function name of the calling function
+		 * @param lineNumber The line number for the invocation of the assertion
+		 *	in the file containing the calling function
+		 */
+		template <typename Type>
+		void _AssertGreaterThan(Type target, Type actual,
+			const char* fileName, const char* funcName, int lineNumber)
+		{
+			++_totalAssertions;
+			if((target > actual) == false)
+			{
+				// Fail
+ 				++_failedAssertions;
+ 				LogFailure(target, actual, "AssertGreaterThan", fileName, funcName, lineNumber);
+			}
+		}
+
+		/**
+		 * Asserts whether a value actual is greater than or equal to the target value
+		 * @param target The target value
+		 * @param actual The actual value
+		 * @param expected The expected value
+		 * @param actual The actual value
+		 * @param fileName The filename containing the calling function
+		 * @param funcName The function name of the calling function
+		 * @param lineNumber The line number for the invocation of the assertion
+		 *	in the file containing the calling function
+		 */
+		template <typename Type>
+		void _AssertGreaterThanOrEqual(Type target, Type actual,
+			const char* fileName, const char* funcName, int lineNumber)
+		{
+			++_totalAssertions;
+			if((target >= actual) == false)
+			{
+				// Fail
+ 				++_failedAssertions;
+ 				LogFailure(target, actual, "AssertGreaterThanOrEqual", fileName, funcName, lineNumber);
+			}
+		}
+
+		/**
+		 * Asserts whether a value actual is less than the target value
+		 * @param target The target value
+		 * @param actual The actual value
+		 * @param fileName The filename containing the calling function
+		 * @param funcName The function name of the calling function
+		 * @param lineNumber The line number for the invocation of the assertion
+		 *	in the file containing the calling function
+		 */
+		template <typename Type>
+		void _AssertLessThan(Type target, Type actual,
+			const char* fileName, const char* funcName, int lineNumber)
+		{
+			++_totalAssertions;
+			if((target < actual) == false)
+			{
+				// Fail
+ 				++_failedAssertions;
+ 				LogFailure(target, actual, "AssertLessThan", fileName, funcName, lineNumber);
+			}
+		}
+
+		/**
+		 * Asserts whether a value actual is less than or equal to the target value
+		 * @param target The target value
+		 * @param actual The actual value
+		 * @param expected The expected value
+		 * @param actual The actual value
+		 * @param fileName The filename containing the calling function
+		 * @param funcName The function name of the calling function
+		 * @param lineNumber The line number for the invocation of the assertion
+		 *	in the file containing the calling function
+		 */
+		template <typename Type>
+		void _AssertLessThanOrEqual(Type target, Type actual,
+			const char* fileName, const char* funcName, int lineNumber)
+		{
+			++_totalAssertions;
+			if((target <= actual) == false)
+			{
+				// Fail
+ 				++_failedAssertions;
+ 				LogFailure(target, actual, "AssertLessThanOrEqual", fileName, funcName, lineNumber);
 			}
 		}
 
