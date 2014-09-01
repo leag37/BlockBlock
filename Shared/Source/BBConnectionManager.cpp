@@ -37,7 +37,7 @@ namespace BlockBlock
 
     /**
      * Initialize the connection manager
-     * @param The default port to use when listening
+     * @param port The default port to use when listening
      * @return Returns true if the initialization is successful
      */
     bool ConnectionManager::Initialize(ushort port)

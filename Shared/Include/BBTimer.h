@@ -10,10 +10,13 @@
 
 namespace BlockBlock
 {
-    /** \addtogroup Utils
+    /** \addtogroup Core
      *	@{
      */
 
+/**
+ * Defines the number of microseconds per second
+ */
 #define MICROSECONDS_PER_SECOND 1000000
 
     /**
