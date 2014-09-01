@@ -67,7 +67,9 @@ namespace BlockBlock
 			numFailedAssertions += test->GetFailedAssertions();
 		}
 
-		printf("Executed %lu tests with %u assertions (%u failed)\n", _tests.size(), numAssertions, numFailedAssertions);
+		std::cout << BOLDCYAN << "Executed " << _tests.size() << " tests with " << numAssertions << " assertions (" << RESET;
+		std::cout << (numFailedAssertions == 0 ? BOLDGREEN : BOLDRED) << numFailedAssertions << " failed" << RESET;
+		std::cout << BOLDCYAN << ")" << RESET << std::endl;
 	}
 
 }	// Namespace

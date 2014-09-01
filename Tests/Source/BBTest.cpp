@@ -28,7 +28,7 @@ namespace BlockBlock
 	void Test::Run()
 	{
 		// Start output
-		std::cout << "Running " << _name << "..." << std::endl;
+		std::cout << BOLDYELLOW << "Running " << _name << "..." << RESET << std::endl;
 
 		// Setup
 		Setup();
@@ -40,7 +40,9 @@ namespace BlockBlock
 		Teardown();
 
 		// Final output
-		std::cout << "Completed " << _name << " with " << _totalAssertions << " assertions (" << _failedAssertions << " failed)" << std::endl << std::endl;
+		std::cout << BOLDYELLOW << "Completed " << _name << " with " << _totalAssertions << " assertions (" << RESET;
+		std::cout << (_failedAssertions == 0 ? BOLDGREEN : BOLDRED) << _failedAssertions << " failed" << RESET;
+		std::cout << BOLDYELLOW << ")" << RESET << std::endl << std::endl;
 	}
 
 	/**

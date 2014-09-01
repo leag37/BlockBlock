@@ -1,7 +1,7 @@
 // Filename: BBTestVector.cpp
 // Author: Gael Huber
 #include "BBTestVector.h"
-//#include "BBVector.h"
+#include "BBVector.h"
 
 namespace BlockBlock
 {
@@ -44,7 +44,7 @@ namespace BlockBlock
 	 */
 	void TestVector::RunImpl()
 	{
-		
+		AssertEquals(true, true);
 	}
 
 }	// Namespace
