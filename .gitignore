@@ -34,7 +34,8 @@ bin
 *.DS_STORE
 
 # Documentation
-Docs
+Docs/html
+Docs/*.tmp
 
 # Sublime Files
 .tags
