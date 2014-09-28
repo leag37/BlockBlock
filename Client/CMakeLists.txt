@@ -7,4 +7,13 @@ set (BBClient_Sources
 )
 
 add_executable(BBClient ${BBClient_Sources})
-target_link_libraries(BBClient BBShared)
+
+# GLFW setup
+set(GLFW_DIR ${BlockBlock_SOURCE_DIR}/External/glfw-3.0.4)
+add_subdirectory(${GLFW_DIR} ${GLFW_DIR})
+include_directories(${GLFW_DIR}/include)
+
+set(TARGET_LIBRARIES glfw ${GLFW_LIBRARIES} BBShared)
+#target_link_libraries(BBClient glfw ${GLFW_LIBRARIES})
+#target_link_libraries(BBClient BBShared)
+target_link_libraries(BBClient ${TARGET_LIBRARIES})
