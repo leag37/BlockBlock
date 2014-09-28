@@ -40,3 +40,4 @@ Docs/*.tmp
 # Sublime Files
 .tags
 .tags_sorted_by_file
+*.sublime-workspace

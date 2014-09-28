@@ -169,7 +169,12 @@ namespace BlockBlock
 		 * @param val The value used to value-initialize any elements past the existing size
 		 */
 		void Resize(uint n, Type val = Type());
-	
+
+		/**
+		 * Return the current capacity in number of elements for this container.
+		 * @return The current number of elements that this container can hold
+		 */
+		uint Capacity() const;
 
 	private:
 		/**
