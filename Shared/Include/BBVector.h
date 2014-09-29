@@ -176,6 +176,158 @@ namespace BlockBlock
 		 */
 		uint Capacity() const;
 
+		/**
+		 * Returns whether the \ref Vector is currently empty.
+		 * @return Returns true if the \ref Size is 0
+		 */
+		bool Empty() const;
+
+		/**
+		 * Requests that the \ref Vector \ref Capacity be enough to contain at least n elements.
+		 * If n is greater than the current \ref Capacity, the container will resize to fit n
+		 * elements. Otherwise, if the \ref Capacity is already sufficiently large, no resizing
+		 * will occur.
+		 * @param size The number of elements required to fit
+		 */
+		void Reserve(uint size);
+		
+		/**
+		 * Access operator. Returns the element at the specified index. This function does not check 
+		 * against bounds.
+		 * @param index The index to access
+		 * @return Return the array element contained at the index specified
+		 */
+		Type& operator[](uint n);
+
+		/**
+		 * Access operator. Returns the element at the specified index. This function does not check 
+		 * against bounds.
+		 * @param index The index to access
+		 * @return Return the array element contained at the index specified
+		 */
+		const Type& operator[](uint n) const;
+
+		/**
+		 * Access operator. Returns the element at the specified index. This function does check 
+		 * against bounds.
+		 * @param index The index to access
+		 * @return Return the array element contained at the index specified
+		 */
+		Type& At(uint n);
+
+		/**
+		 * Access operator. Returns the element at the specified index. This function does check 
+		 * against bounds.
+		 * @param index The index to access
+		 * @return Return the array element contained at the index specified
+		 */
+		const Type& At(uint n) const;
+
+		/**
+		 * Returns the first element in the container.
+		 * @return This returns a reference to the first element in the container
+		 */
+		Type& Front();
+
+		/**
+		 * Returns the first element in the container.
+		 * @return This returns a reference to the first element in the container
+		 */
+		const Type& Front() const;
+
+		/**
+		 * Returns the last element in the container.
+		 * @return This returns a reference to the last element in the container
+		 */
+		Type& Last();
+
+		/**
+		 * Returns the last element in the container.
+		 * @return This returns a reference to the last element in the container
+		 */
+		const Type& Last() const;
+
+		/**
+		 * Given a range of elements first to last, modify the contents of the \ref Vector
+		 * such that it now contains the elements from first to last inclusive
+		 * @param first The first element in the range
+		 * @param last The last element in the range
+		 */
+		template <class InputIterator>
+		void Assign(InputIterator first, InputIterator last);
+
+		/**
+		 * Given a number of elements n and a base value val, fill the array with n copies
+		 * of val.
+		 * @param n The number of elements to fill
+		 * @param val The value to assign to each element
+		 */
+		void Assign(uint n, const Type& val);
+
+		/**
+		 * Add an element to end of the \ref Vector after the current last element
+		 * @param val The value to add to the container
+		 */
+		void PushBack(const Type& val);
+
+		/**
+		 * Removes the last element in the container.
+		 */
+		void PopBack();
+
+		/**
+		 * Insert a single element into the container at a specified position.
+		 * @param position The position at which to insert
+		 * @param val The value to insert
+		 * @return An iterator that points to the first of the newly inserted elements
+		 */
+		Iterator Insert(Iterator position, const Type& val);
+
+		/**
+		 * Insert a single element into the container n times at a specified position.
+		 * @param position The position at which to insert
+		 * @param n The number of times to insert the element
+		 * @param val The value to insert
+		 * @return An iterator that points to the first of the newly inserted elements
+		 */
+		Iterator Insert(Iterator position, uint n, const Type& val);
+
+		/**
+		 * Insert a range of elements into the container at a specified position.
+		 * @param position The position at which to insert
+		 * @param first The first element in the range to insert
+		 * @param last The last element in the range to insert
+		 * @return An iterator that points to the first of the newly inserted elements
+		 */
+		template <class InputIterator>
+		Iterator Insert(Iterator position, InputIterator first, InputIterator last);
+
+		/**
+		 * Erases the element in the specified position
+		 * @param position The position at which to erase
+		 * @return The iterator pointing to the first element after the erased element
+		 */
+		Iterator Erase(Iterator position);
+
+		/**
+		 * Erases the range of elements in the specified position
+		 * @param first The first element in the range to erase
+		 * @param last The last element in the range to erase
+		 * @return The iterator pointing to the first element after the erased range
+		 */
+		Iterator Erase(Iterator first, Iterator last);
+
+		/**
+		 * Swap the contents of this vector with another vector
+		 * @param other The \ref Vector with which to swap contents
+		 */
+		void Swap(Vector& other);
+
+		/**
+		 * Clears the \ref Vector of its elements, destroying each element.
+		 */
+		void Clear();
+		
 	private:
 		/**
 		 * Allocator used for this vector
