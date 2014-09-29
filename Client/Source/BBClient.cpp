@@ -67,6 +67,13 @@ namespace BlockBlock
 			return false;
 		}
 
+		// Hints for antialiasing, etc.
+		glfwWindowHint(GLFW_SAMPLES, 4);
+		//glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);	// We want to use OpenGL 3.3
+		//glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+		//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+		//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);	// Ensure we are using recent OpenGL
+		
 		window = glfwCreateWindow(640, 480, "Simple example", NULL, NULL);
 		if(!window)
 		{
