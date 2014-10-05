@@ -8,12 +8,17 @@ set (BBClient_Sources
 
 add_executable(BBClient ${BBClient_Sources})
 
+find_package(GLEW)
+
 # GLFW setup
 set(GLFW_DIR ${BlockBlock_SOURCE_DIR}/External/glfw-3.0.4)
 add_subdirectory(${GLFW_DIR} ${GLFW_DIR})
-include_directories(${GLFW_DIR}/include)
 
-set(TARGET_LIBRARIES glfw ${GLFW_LIBRARIES} BBShared)
-#target_link_libraries(BBClient glfw ${GLFW_LIBRARIES})
-#target_link_libraries(BBClient BBShared)
+# GLM setup
+set(GLM_DIR ${BlockBlock_SOURCE_DIR}/External/glm-0.9.5.4)
+
+# Includes
+include_directories(${GLFW_DIR}/include ${GLM_DIR} ${GLEW_INCLUDE_DIRS})
+
+set(TARGET_LIBRARIES glfw ${GLFW_LIBRARIES} BBShared ${GLEW_LIBRARIES})
 target_link_libraries(BBClient ${TARGET_LIBRARIES})
