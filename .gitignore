@@ -27,8 +27,9 @@
 *CMakeFiles
 *cmake_install.cmake
 
-# Ignore bin
+# Ignored dirs
 bin
+asm
 
 # Mac-specific files
 *.DS_STORE
