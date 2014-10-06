@@ -179,7 +179,20 @@ namespace BlockBlock
 	 */
 	void TestVector::TestInsertion()
 	{
-		
+		// Test insertion on simple data
+		Vector<int> v1;
+		for(int i = 0; i < 3; ++i)
+		{
+			v1.PushBack(i);
+		}
+		AssertEquals(3u, v1.Size());
+		AssertEquals(4u, v1.Capacity());
+		for(int i = 0; i < 3; ++i)
+		{
+			AssertEquals(i, v1[i]);
+		}
+
+		// TODO: Add case for simple class
 	}
 
 	/**
@@ -187,7 +200,28 @@ namespace BlockBlock
 	 */
 	void TestVector::TestRemove()
 	{
+		// Test insertion on simple data
+		Vector<int> v1;
+		for(int i = 0; i < 3; ++i)
+		{
+			v1.PushBack(i);
+		}
 
+		// Validate data
+		AssertEquals(3u, v1.Size());
+		AssertEquals(4u, v1.Capacity());
+		for(int i = 0; i < 3; ++i)
+		{
+			AssertEquals(i, v1[i]);
+		}
+
+		// Remove data
+		for(int i = 0; i < 3; ++i)
+		{
+			v1.PopBack();
+		}
+		AssertEquals(0u, v1.Size());
+		AssertEquals(4u, v1.Capacity());
 	}
 
 	/**
