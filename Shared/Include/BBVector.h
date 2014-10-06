@@ -20,24 +20,24 @@ namespace BlockBlock
 	{
 	public:
 		/**
-		 * Iterator
-		 */
-		class Iterator;
-
-		/**
 		 * Constant iterator
 		 */
 		class ConstIterator;
 
 		/**
-		 * Reverse iterator
+		 * Iterator
 		 */
-		class ReverseIterator;
+		class Iterator;
 
 		/**
 		 * Constant reverse iterator
 		 */
 		class ConstReverseIterator;
+
+		/**
+		 * Reverse iterator
+		 */
+		class ReverseIterator;
 
 	public:
 		/**
@@ -349,6 +349,93 @@ namespace BlockBlock
 		 */
 		Type* _array;
 	};
+
+	/**
+	 * Constant iterator
+	 */
+	template <typename Type, typename Allocator> 
+	class Vector<Type, Allocator>::ConstIterator
+	{
+	public:
+		/**
+		 * Default constructor
+		 */
+		ConstIterator();
+
+		/**
+		 * Constructs the iterator with a pointer to the desired element in the array
+		 * @param element A pointer to the array element represented by this iterator
+		 */
+		ConstIterator(Type* elememt);
+
+		/**
+		 * Copy constructor
+		 * @param other The iterator to copy
+		 */
+		ConstIterator(const ConstIterator& other);
+
+		/**
+		 * Destructor
+		 */
+		~ConstIterator();
+
+		/**
+		 * Assignment operator
+		 * @param other The iterator to assign
+		 * @return The reference to the iterator after assignment
+		 */
+		ConstIterator& operator=(const ConstIterator& other);
+
+		/**
+		 * Equality operator.
+		 * @param other The iterator against which to compare
+		 * @return Returns true if the iterators point to the same element
+		 */
+		bool operator==(const ConstIterator& other);
+
+		/**
+		 * Inequality operator.
+		 * @param other The iterator against which to compare
+		 * @return Returns true if the iterators point to different elements
+		 */
+		bool operator!=(const ConstIterator& other);
+
+		/**
+		 * Dereference the iterator as an rvalue
+		 * @return Returns a const reference to the underlying vector element of the iterator
+		 */
+		const Type& operator*() const;
+
+		/**
+		 * Dereference the iterator as an rvalue
+		 * @return Returns a const pointer to the underlying vector element
+		 */
+		const Type* operator->() const;
+
+
+
+	private:
+	};
+
+	/**
+	 * Iterator
+	 */
+	//class Iterator;
+
+	/**
+	 * Constant reverse iterator
+	 */
+	//class ConstReverseIterator;
+
+	/**
+	 * Reverse iterator
+	 */
+	//class ReverseIterator;
+	
+	/**
+	 * Implementation details for Vector container
+	 */
+	#include "BBVector.inl"
 
 	/** @} */
 
