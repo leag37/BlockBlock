@@ -15,25 +15,89 @@ namespace BlockBlock
 	*/
 
 	/**
-	 * Text output colors
+	 * Reset the console color output
 	 */
 	#define RESET   "\033[0m"
-	#define BLACK   "\033[30m"      /* Black */
-	#define RED     "\033[31m"      /* Red */
-	#define GREEN   "\033[32m"      /* Green */
-	#define YELLOW  "\033[33m"      /* Yellow */
-	#define BLUE    "\033[34m"      /* Blue */
-	#define MAGENTA "\033[35m"      /* Magenta */
-	#define CYAN    "\033[36m"      /* Cyan */
-	#define WHITE   "\033[37m"      /* White */
-	#define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
-	#define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
-	#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
-	#define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
-	#define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
-	#define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
-	#define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
-	#define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
+
+	/**
+	 * Escape sequence for outputing black to console
+	 */
+	#define BLACK   "\033[30m"
+	
+	/**
+	 * Escape sequence for outputing red to console
+	 */
+	#define RED     "\033[31m"
+	
+	/**
+	 * Escape sequence for outputing green to console
+	 */
+	#define GREEN   "\033[32m"
+	
+	/**
+	 * Escape sequence for outputing yellow to console
+	 */
+	#define YELLOW  "\033[33m"
+	
+	/**
+	 * Escape sequence for outputing blue to console
+	 */
+	#define BLUE    "\033[34m"
+	
+	/**
+	 * Escape sequence for outputing magenta to console
+	 */
+	#define MAGENTA "\033[35m"
+	
+	/**
+	 * Escape sequence for outputing cyan to console
+	 */
+	#define CYAN    "\033[36m"
+	
+	/**
+	 * Escape sequence for outputing white to console
+	 */
+	#define WHITE   "\033[37m"
+	
+	/**
+	 * Escape sequence for outputing bold black to console
+	 */
+	#define BOLDBLACK   "\033[1m\033[30m"
+	
+	/**
+	 * Escape sequence for outputing bold red to console
+	 */
+	#define BOLDRED     "\033[1m\033[31m"
+	
+	/**
+	 * Escape sequence for outputing bold green to console
+	 */
+	#define BOLDGREEN   "\033[1m\033[32m"
+	
+	/**
+	 * Escape sequence for outputing bold yellow to console
+	 */
+	#define BOLDYELLOW  "\033[1m\033[33m"
+	
+	/**
+	 * Escape sequence for outputing bold blue to console
+	 */
+	#define BOLDBLUE    "\033[1m\033[34m"
+	
+	/**
+	 * Escape sequence for outputing bold magenta to console
+	 */
+	#define BOLDMAGENTA "\033[1m\033[35m"
+	
+	/**
+	 * Escape sequence for outputing bold cyan to console
+	 */
+	#define BOLDCYAN    "\033[1m\033[36m"
+	
+	/**
+	 * Escape sequence for outputing bold white to console
+	 */
+	#define BOLDWHITE   "\033[1m\033[37m"
 
 	/**
 	 * Base class used for running unit tests.
@@ -205,8 +269,6 @@ namespace BlockBlock
 		 * Asserts whether a value actual is greater than or equal to the target value
 		 * @param target The target value
 		 * @param actual The actual value
-		 * @param expected The expected value
-		 * @param actual The actual value
 		 * @param fileName The filename containing the calling function
 		 * @param funcName The function name of the calling function
 		 * @param lineNumber The line number for the invocation of the assertion
@@ -251,8 +313,6 @@ namespace BlockBlock
 		 * Asserts whether a value actual is less than or equal to the target value
 		 * @param target The target value
 		 * @param actual The actual value
-		 * @param expected The expected value
-		 * @param actual The actual value
 		 * @param fileName The filename containing the calling function
 		 * @param funcName The function name of the calling function
 		 * @param lineNumber The line number for the invocation of the assertion
@@ -275,6 +335,7 @@ namespace BlockBlock
 		 * Output failure text to log
 		 * @param expected The expected value
 		 * @param actual The actual value
+		 * @param assertion The type of assertion being logged
 		 * @param fileName The filename containing the calling function
 		 * @param funcName The function name of the calling function
 		 * @param lineNumber The line number for the invocation of the assertion

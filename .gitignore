@@ -26,16 +26,20 @@
 *CMakeCache.txt
 *CMakeFiles
 *cmake_install.cmake
+Makefile
 
-# Ignore bin
+# Ignored dirs
 bin
+asm
 
 # Mac-specific files
 *.DS_STORE
 
 # Documentation
-Docs
+Docs/html
+Docs/*.tmp
 
 # Sublime Files
 .tags
 .tags_sorted_by_file
+*.sublime-workspace

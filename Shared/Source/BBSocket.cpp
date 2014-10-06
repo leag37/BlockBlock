@@ -138,7 +138,7 @@ namespace BlockBlock
      * Receive data over the socket
      * @param fromAddress The sender of the packet
      * @param data A pointer to the data to receive
-     * @param size The maximum size of the data to receive
+     * @param maxSize The maximum size of the data to receive
      * @return int The number of bytes read
      */
     int Socket::Receive(NetAddress& fromAddress, void* data, int maxSize)

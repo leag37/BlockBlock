@@ -141,11 +141,16 @@ namespace std
      * Hash function specialization for netaddress
      */
     template<>
-        struct hash<BlockBlock::NetAddress> {
-            size_t operator()(const BlockBlock::NetAddress& address) const {
-                return std::hash<BlockBlock::uint>()(address.GetNetAddress()) ^ std::hash<BlockBlock::ushort>()(address.GetNetPort());
-            }
-        };
+    struct hash<BlockBlock::NetAddress> {
+        /**
+         * Uses a simple hash to get a hash value for a NetAddress
+         * @param address The NetAddress to hash
+         * @return The hash value of the object
+         */
+        size_t operator()(const BlockBlock::NetAddress& address) const {
+            return std::hash<BlockBlock::uint>()(address.GetNetAddress()) ^ std::hash<BlockBlock::ushort>()(address.GetNetPort());
+        }
+    };
 }
 
 #endif // __BBNETADDRESS_H__
