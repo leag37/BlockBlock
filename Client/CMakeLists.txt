@@ -11,6 +11,9 @@ add_executable(BBClient ${BBClient_Sources})
 find_package(GLEW)
 
 # GLFW setup
+set(GLFW_BUILD_EXAMPLES OFF)
+set(GLFW_BUILD_TESTS OFF)
+set(GLFW_BUILD_DOCS OFF)
 set(GLFW_DIR ${BlockBlock_SOURCE_DIR}/External/glfw-3.0.4)
 add_subdirectory(${GLFW_DIR} ${GLFW_DIR})
 
