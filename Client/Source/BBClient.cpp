@@ -480,7 +480,12 @@ namespace BlockBlock
 		//	return false;
 		//}
 		
-		GLFWwindow* window;
+		_renderer = new Renderer();
+		_renderer->Initialize();
+		Window* window = _renderer->CreateWindow(1024, 768);
+		_renderer->SetActiveWindow(window);
+
+		/*GLFWwindow* window;
 		glfwSetErrorCallback(error_callback);
 		
 		if(!glfwInit())
@@ -862,7 +867,7 @@ namespace BlockBlock
 		}
 
 		glfwDestroyWindow(window);
-		glfwTerminate();
+		glfwTerminate();*/
 
 		return true;
 	}
@@ -890,10 +895,10 @@ namespace BlockBlock
 		while(isRunning)
 		{
 			// Update the connection manager and receive any messages
-			if(_player->Update() == false)
-			{
-				isRunning = false;
-			}
+			//if(_player->Update() == false)
+			//{
+			//	isRunning = false;
+			//}
 		}
 	}
 

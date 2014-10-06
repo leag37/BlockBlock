@@ -320,29 +320,41 @@ const Type& Vector<Type, Allocator>::At(uint n) const
  * Returns the first element in the container.
  * @return This returns a reference to the first element in the container
  */
-//template <typename Type, typename Allocator>
-//Type& Vector<Type, Allocator>::Front();
+template <typename Type, typename Allocator>
+Type& Vector<Type, Allocator>::Front()
+{
+	return _array[0];
+}
 
 /**
  * Returns the first element in the container.
  * @return This returns a reference to the first element in the container
  */
-//template <typename Type, typename Allocator>
-//const Type& Vector<Type, Allocator>::Front() const;
+template <typename Type, typename Allocator>
+const Type& Vector<Type, Allocator>::Front() const
+{
+	return _array[0];
+}
 
 /**
  * Returns the last element in the container.
  * @return This returns a reference to the last element in the container
  */
-//template <typename Type, typename Allocator>
-//Type& Vector<Type, Allocator>::Last();
+template <typename Type, typename Allocator>
+Type& Vector<Type, Allocator>::Last()
+{
+	return _array[_elementCount - 1];
+}
 
 /**
  * Returns the last element in the container.
  * @return This returns a reference to the last element in the container
  */
-//template <typename Type, typename Allocator>
-//const Type& Vector<Type, Allocator>::Last() const;
+template <typename Type, typename Allocator>
+const Type& Vector<Type, Allocator>::Last() const
+{
+	return _array[_elementCount - 1];
+}
 
 /**
  * Given a range of elements first to last, modify the contents of the \ref Vector
