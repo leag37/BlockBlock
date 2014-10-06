@@ -205,6 +205,54 @@ Source/BBClientMain.cpp.s:
 	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/Source/BBClientMain.cpp.s
 .PHONY : Source/BBClientMain.cpp.s
 
+Source/BBRenderer.o: Source/BBRenderer.cpp.o
+.PHONY : Source/BBRenderer.o
+
+# target to build an object file
+Source/BBRenderer.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/Source/BBRenderer.cpp.o
+.PHONY : Source/BBRenderer.cpp.o
+
+Source/BBRenderer.i: Source/BBRenderer.cpp.i
+.PHONY : Source/BBRenderer.i
+
+# target to preprocess a source file
+Source/BBRenderer.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/Source/BBRenderer.cpp.i
+.PHONY : Source/BBRenderer.cpp.i
+
+Source/BBRenderer.s: Source/BBRenderer.cpp.s
+.PHONY : Source/BBRenderer.s
+
+# target to generate assembly for a file
+Source/BBRenderer.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/Source/BBRenderer.cpp.s
+.PHONY : Source/BBRenderer.cpp.s
+
+Source/BBWindow.o: Source/BBWindow.cpp.o
+.PHONY : Source/BBWindow.o
+
+# target to build an object file
+Source/BBWindow.cpp.o:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/Source/BBWindow.cpp.o
+.PHONY : Source/BBWindow.cpp.o
+
+Source/BBWindow.i: Source/BBWindow.cpp.i
+.PHONY : Source/BBWindow.i
+
+# target to preprocess a source file
+Source/BBWindow.cpp.i:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/Source/BBWindow.cpp.i
+.PHONY : Source/BBWindow.cpp.i
+
+Source/BBWindow.s: Source/BBWindow.cpp.s
+.PHONY : Source/BBWindow.s
+
+# target to generate assembly for a file
+Source/BBWindow.cpp.s:
+	cd /Users/Gandalf/Dev/BlockBlock && $(MAKE) -f Client/CMakeFiles/BBClient.dir/build.make Client/CMakeFiles/BBClient.dir/Source/BBWindow.cpp.s
+.PHONY : Source/BBWindow.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -224,6 +272,12 @@ help:
 	@echo "... Source/BBClientMain.o"
 	@echo "... Source/BBClientMain.i"
 	@echo "... Source/BBClientMain.s"
+	@echo "... Source/BBRenderer.o"
+	@echo "... Source/BBRenderer.i"
+	@echo "... Source/BBRenderer.s"
+	@echo "... Source/BBWindow.o"
+	@echo "... Source/BBWindow.i"
+	@echo "... Source/BBWindow.s"
 .PHONY : help
 
 

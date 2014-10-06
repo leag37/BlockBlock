@@ -6,6 +6,7 @@
 #include "BBPlatform.h"
 #include "BBConnectionManager.h"
 #include "BBNetworkPlayer.h"
+#include "BBRenderer.h"
 
 namespace BlockBlock
 {
@@ -55,6 +56,11 @@ namespace BlockBlock
 		 * The network player for this connection
 		 */
 		NetworkPlayer* _player;
+
+		/**
+		 * Renderer
+		 */
+		Renderer* _renderer;
 	};
 
 
