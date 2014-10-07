@@ -485,6 +485,10 @@ namespace BlockBlock
 		Window* window = _renderer->CreateWindow(1024, 768);
 		_renderer->SetActiveWindow(window);
 
+		// Input manager
+		//_inputController = new InputController();
+		//_inputController->Initialize();
+
 		/*GLFWwindow* window;
 		glfwSetErrorCallback(error_callback);
 		
