@@ -3,9 +3,10 @@
 #ifndef __BBINPUTCONTROLLER_H__
 #define __BBINPUTCONTROLLER_H__
 
-#include "BBPlatform.h"
-
 #include <GLFW/glfw3.h>
+
+#include "BBPlatform.h"
+#include "BBWindow.h"
 
 namespace BlockBlock
 {
@@ -26,9 +27,26 @@ namespace BlockBlock
 		 */
 		~InputController();
 
-		
+		/**
+		 * @return Returns true if initialization is successful
+		 */
+		bool Initialize();
+
+		/**
+		 * Shut down the input controller
+		 */
+		void Shutdown();
+
+		/**
+		 * Bind a window to this input controller
+		 */
+		void BindWindow(Window* window);
 
 	private:
+		/**
+		 * The render window registered with this input
+		 */
+		Window* _window;
 
 	};
 

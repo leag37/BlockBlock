@@ -20,6 +20,10 @@ namespace BlockBlock
 	 * Default constructor
 	 */
 	Client::Client()
+		:	_connectionManager(0),
+			_player(0),
+			_renderer(0),
+			_inputController(0)
 	{
 
 	}
@@ -63,14 +67,6 @@ namespace BlockBlock
 	double yPos = 10000.0;
 	double xLast = 10000.0;
 	double yLast = 10000.0;
-
-	static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
-	{
-		if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-		{
-			glfwSetWindowShouldClose(window, GL_TRUE);
-		}
-	}
 
 	static void scroll_callback(GLFWwindow* window, double xOffset, double yOffset)
 	{
@@ -475,19 +471,28 @@ namespace BlockBlock
 		// Create the player
 		NetAddress address = NetAddress(127, 0, 0, 1, 30000);
 		_player = new NetworkPlayer();
-		//if(_player->Initialize(address) == false)
-		//{
-		//	return false;
-		//}
+		if(_player->Initialize(address) == false)
+		{
+			return false;
+		}
 		
 		_renderer = new Renderer();
-		_renderer->Initialize();
+		if(_renderer->Initialize() == false)
+		{
+			return false;
+		}
 		Window* window = _renderer->CreateWindow(1024, 768);
 		_renderer->SetActiveWindow(window);
 
-		// Input manager
-		//_inputController = new InputController();
-		//_inputController->Initialize();
+		// Input controller
+		_inputController = new InputController();
+		if(_inputController->Initialize() == false)
+		{
+			return false;
+		}
+		
+		// Bind the input controller to the current window
+		_inputController->BindWindow(window);
 
 		/*GLFWwindow* window;
 		glfwSetErrorCallback(error_callback);
@@ -881,6 +886,27 @@ namespace BlockBlock
 	 */
 	void Client::Shutdown()
 	{
+		if(_inputController)
+		{
+			_inputController->Shutdown();
+			delete _inputController;
+			_inputController = 0;
+		}
+
+		if(_player)
+		{
+			_player->Shutdown();
+			delete _player;
+			_player = 0;
+		}
+
+		if(_renderer)
+		{
+			_renderer->Shutdown();
+			delete _renderer;
+			_renderer = 0;
+		}
+
 		if(_connectionManager)
 		{
 			_connectionManager->Shutdown();

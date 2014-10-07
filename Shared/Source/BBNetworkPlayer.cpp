@@ -54,7 +54,7 @@ namespace BlockBlock
 	*/
 	bool NetworkPlayer::Initialize(const NetAddress& address)
 	{
-		return false;
+		return true;
 	}
 
 	/**
@@ -72,7 +72,7 @@ namespace BlockBlock
 	*/
 	bool NetworkPlayer::Update()
 	{
-		return false;
+		return true;
 	}
 
 }	// namespace

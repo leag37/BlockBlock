@@ -4,6 +4,7 @@ include_directories(Include ${BlockBlock_SOURCE_DIR}/Shared/Include)
 set (BBClient_Sources
 	Source/BBClient.cpp
 	Source/BBClientMain.cpp
+	Source/BBInputController.cpp
 	Source/BBRenderer.cpp
 	Source/BBWindow.cpp
 )

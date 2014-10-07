@@ -75,6 +75,12 @@ namespace BlockBlock
 	 */
 	bool Renderer::Update()
 	{
+		// If the active window is either not set, or it should be closed, return false
+		if(_activeWindow == 0 || glfwWindowShouldClose(_activeWindow->GetWindow()))
+		{
+			return false;
+		}
+
 		// Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
