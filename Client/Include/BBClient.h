@@ -7,6 +7,7 @@
 #include "BBConnectionManager.h"
 #include "BBNetworkPlayer.h"
 #include "BBRenderer.h"
+#include "BBInputController.h"
 
 namespace BlockBlock
 {
@@ -61,6 +62,11 @@ namespace BlockBlock
 		 * Renderer
 		 */
 		Renderer* _renderer;
+
+		/**
+		 * Input controller
+		 */
+		InputController* _inputController;
 	};
 
 

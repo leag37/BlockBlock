@@ -2,6 +2,8 @@
 // Author: Gael Huber
 #include "BBRenderer.h"
 
+#include <iostream>
+
 namespace BlockBlock
 {
 	/**
@@ -68,6 +70,30 @@ namespace BlockBlock
 	}
 
 	/**
+	 * Update the renderer
+	 * @return Returns true if the renderer updates successfully
+	 */
+	bool Renderer::Update()
+	{
+		// If the active window is either not set, or it should be closed, return false
+		if(_activeWindow == 0 || glfwWindowShouldClose(_activeWindow->GetWindow()))
+		{
+			return false;
+		}
+
+		// Clear the screen
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		// Swap the window buffer
+		glfwSwapBuffers(_activeWindow->GetWindow());
+
+		// Poll for GLFW events
+		glfwPollEvents();
+
+		return true;
+	}
+
+	/**
 	 * Create a window
 	 * @param width The window width
 	 * @param height The window height
@@ -93,5 +119,8 @@ namespace BlockBlock
 		{
 			// Output?
 		}
+
+		// Set the clear color
+		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	}
 }
