@@ -13,7 +13,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/${CMAKE_BUILD_TYPE})
 
 # Set compiler flags
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
-set(CMAKE_CXX_FLAGS "-Wall -save-temps")
+set(CMAKE_CXX_FLAGS "-Wall -save-temps -std=c++11")
 
 if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
 	message("Configuring for DEBUG!")
