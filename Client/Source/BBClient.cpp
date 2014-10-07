@@ -899,6 +899,12 @@ namespace BlockBlock
 			//{
 			//	isRunning = false;
 			//}
+			
+			// Update rendering engine
+			if(_renderer->Update() == false)
+			{
+				isRunning = false;
+			}
 		}
 	}
 

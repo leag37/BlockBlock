@@ -43,6 +43,12 @@ namespace BlockBlock
 		void Shutdown();
 
 		/**
+		 * Update the renderer
+		 * @return Returns true if the renderer updates successfully
+		 */
+		bool Update();
+
+		/**
 		 * Create a window
 		 * @param width The window width
 		 * @param height The window height
